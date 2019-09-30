@@ -14,7 +14,7 @@ Suivant les consignes de la fiche technique du produit (https://www.olimex.com/P
 J'ai ensuite calibré le catpeur car chaque capteur de ce fabricant nécessite un calibrage différent.
 
 Après quelques manipulations, je suis arrivé à une valeur proche de la réalité concernant la quantité de CO2 par mètre cube.
-J'ai alors fais quelques testes avec différents gaz.
+J'ai alors fais quelques tests avec différents gaz.
 J'ai testé avec du gaz de briquet (butane ou propane). Le capteur a bien réagit et un pique est observable sur une durée déterminée.
 J'ai ensuite testé avec du CO2, gaz principal recherché dans notre projet, à l'aide d'une bougie (éteinte puis rapidement placée sous le capteur).
 Cependant, le capteur n'a pas réagit, ni à la fumée, ni au CO2.
