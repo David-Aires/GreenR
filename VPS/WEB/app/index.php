@@ -1,2 +1,2 @@
 <?php
-echo 'Hello world!';
+echo 'GreenR en cours de maintenance';

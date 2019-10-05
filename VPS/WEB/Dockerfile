@@ -36,7 +36,6 @@ RUN	\
 	# Forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /var/log/apache2/access.log \
 	&& ln -sf /dev/stderr /var/log/apache2/error.log \
-	&& chmod 755 /sbin/entrypoint.sh \
 	&& chown www-data:www-data ${PHP_DATA_DIR} -Rf
 
 COPY ./configs/apache2.conf ${APACHE_CONF_DIR}/apache2.conf
