@@ -22,9 +22,9 @@ RUN apt-get -y install mysql-server
 
 
 # add our my.cnf and setup script
-ADD /etc/mysql/my.cnf
-ADD /home/setup.sh
-ADD /home/db_shema.sql
+ADD https://raw.githubusercontent.com/David-Aires/GreenR/master/VPS/DB/script/my.cnf /etc/mysql/my.cnf
+ADD https://raw.githubusercontent.com/David-Aires/GreenR/master/VPS/DB/script/setup.sh /home/setup.sh
+ADD https://raw.githubusercontent.com/David-Aires/GreenR/master/VPS/DB/script/db_shema.sql /home/db_shema.sql
 RUN chmod +x /home/db_shema.sql
 RUN chmod +x /home/setup.sh
 
