@@ -31,7 +31,7 @@ USE `db_GreenR`;
 --
 
 CREATE TABLE `POSITION` (
-  `ID_POS` int NOT NULL AUTO_INCREMENT,
+  `ID_POS` char(5) NOT NULL,
   `LAT` decimal(9,2) NOT NULL,
   `LON` decimal(9,2) NOT NULL,
   `ALT` decimal(9,2) NOT NULL,
@@ -45,8 +45,9 @@ CREATE TABLE `POSITION` (
 --
 
 CREATE TABLE `CROSS_CENTER` (
-  `ID_POS` int NOT NULL,
-  `ID_AIR` int NOT NULL,
+  `SERIAL_NUM` int,
+  `ID_POS` char(5) NOT NULL,
+  `ID_AIR` char(5) NOT NULL,
   `DATE_TIME` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -58,7 +59,7 @@ CREATE TABLE `CROSS_CENTER` (
 --
 
 CREATE TABLE `AIR_STAT` (
-  `ID_AIR` int NOT NULL AUTO_INCREMENT,
+  `ID_AIR` char(5) NOT NULL,
   `TEMPERATURE` decimal(2,2) NOT NULL,
   `HUMIDITY` decimal(2,2) NOT NULL,
   `CO2` decimal(9,2) NOT NULL,
@@ -70,9 +71,27 @@ CREATE TABLE `AIR_STAT` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `AIR_BOX`
+--
+
+CREATE TABLE `AIR_BOX` (
+  `SERIAL_NUM` int NOT NULL,
+  `LOCALITE` varchar(20) DEFAULT NULL,
+  `FIXED` boolean NOT NULL,
+  `STATE` ENUM ('broken','active','standby') NOT NULL,
+  `DATE_ACTIVE` date NOT NULL,
+  PRIMARY KEY (`SERIAL_NUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+-- --------------------------------------------------------
+
+--
 -- Index pour la table `CROSS_CENTER`
 --
 ALTER TABLE `CROSS_CENTER`
+  ADD KEY `SERIAL_NUM` (`SERIAL_NUM`),
   ADD KEY `ID_POS` (`ID_POS`),
   ADD KEY `ID_AIR` (`ID_AIR`);
 
@@ -88,8 +107,9 @@ ALTER TABLE `CROSS_CENTER`
 -- Contraintes pour la table `CROSS_CENTER`
 --
 ALTER TABLE `CROSS_CENTER`
-  ADD CONSTRAINT `CROSS_CENTER_ibfk_1` FOREIGN KEY (`ID_POS`) REFERENCES `POSITION` (`ID_POS`),
-  ADD CONSTRAINT `CROSS_CENTER_ibfk_2` FOREIGN KEY (`ID_AIR`) REFERENCES `AIR_STAT` (`ID_AIR`);
+  ADD CONSTRAINT `CROSS_CENTER_ibfk_1` FOREIGN KEY (`ID_POS`) REFERENCES `POSITION` (`ID_POS`) ON DELETE CASCADE,
+  ADD CONSTRAINT `CROSS_CENTER_ibfk_2` FOREIGN KEY (`ID_AIR`) REFERENCES `AIR_STAT` (`ID_AIR`) ON DELETE CASCADE,
+  ADD CONSTRAINT `CROSS_CENTER_ibfk_3` FOREIGN KEY (`SERIAL_NUM`) REFERENCES `AIR_BOX` (`SERIAL_NUM`) ON DELETE SET NULL;
 
 
 
