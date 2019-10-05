@@ -11,7 +11,7 @@ COPY showcase/green-r.be.conf /etc/apache2/site-available/green-r.be.conf
 COPY showcase/html /var/www/default/html
 
 #delete default apache website
-RUN rm -v /etc/apache2/sites-enabled/000-default
+RUN rm /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-available/000-default.conf 
 
 # activer mod apache
 RUN a2enmod php7.0
