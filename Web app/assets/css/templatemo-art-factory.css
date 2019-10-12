@@ -126,7 +126,7 @@ ul,
 li {
   padding: 0;
   margin: 0;
-  list-style: none;
+  /*list-style: none;*/
 }
 
 header,
@@ -190,12 +190,12 @@ body {
 }
 
 ::selection {
-  background: #ff589e;
+  background: #7660fc;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #ff589e;
+  background: #7660fc;
   color: #fff;
 }
 
@@ -231,14 +231,14 @@ a.main-button-slider {
 }
 
 a.main-button-slider:hover {
-  background-color: #0088e8;
+  background-color: #7660fc;
 }
 
 a.main-button {
   font-size: 13px;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: #00b4c6;
+  background-color: #483a9c;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.25px;
@@ -249,7 +249,7 @@ a.main-button {
 }
 
 a.main-button:hover {
-  background-color: #0088e8;
+  background-color: #7660fc;
 }
 
 button.main-button {
@@ -270,7 +270,7 @@ button.main-button {
 }
 
 button.main-button:hover {
-  background-color: #0088e8;
+  background-color: #7660fc;
 }
 
 .section-heading h2 {
@@ -307,6 +307,8 @@ header
 .background-header .main-nav .nav li a {
   color: #1e1e1e !important;
 }
+
+
 
 .background-header .main-nav .nav > li:hover > a {
   color: #f55858 !important;
@@ -860,7 +862,7 @@ about
 
 #about2 {
   padding: 120px 0px;
-  background-image: linear-gradient(white,yellowgreen);
+  background-image: linear-gradient(white,#7660fc);
 }
 
 #about2 .right-image {
@@ -910,8 +912,8 @@ services
 #services {
   position: relative;
   padding: 120px 0px 90px 0px;
-  background: yellowgreen;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0088e8', endColorstr='#0088e8', GradientType=1 );
+  background: #7660fc;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7660fc', endColorstr='#7660fc', GradientType=1 );
 }
 
 .service-item {
@@ -936,7 +938,6 @@ services
 
 .service-item:hover .icon,
 .service-item:hover a.main-button {
-  background-color: #0088e8;
 }
 
 .service-item .icon {
@@ -951,7 +952,6 @@ services
   margin: auto;
   position: relative;
   margin-bottom: 30px;
-  background: #00b4c6;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -959,11 +959,15 @@ services
 }
 
 .service-item .icon img {
-  max-width: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#linkedin{
+  margin-top: 30px;
+  display: inline-block;
 }
 
 .service-item .service-title {
@@ -1124,7 +1128,7 @@ accordions
   transition: transform 200ms ease-in-out;
 }
 .accordion-head.is-open {
-  color: #0088e8;
+  color: #7660fc;
   border-bottom: none;
 }
 .accordion-head.is-open .icon {
@@ -1184,45 +1188,7 @@ contact
 
 .contact-form {
   padding: 100px;
-  background: rgba(0, 136, 232, 1);
-  background: -moz-linear-gradient(
-    -45deg,
-    rgba(0, 136, 232, 1) 0%,
-    rgba(0, 182, 198, 1) 0%,
-    rgba(0, 136, 232, 1) 100%
-  );
-  background: -webkit-gradient(
-    left top,
-    right bottom,
-    color-stop(0%, rgba(0, 136, 232, 1)),
-    color-stop(0%, rgba(0, 182, 198, 1)),
-    color-stop(100%, rgba(0, 136, 232, 1))
-  );
-  background: -webkit-linear-gradient(
-    -45deg,
-    rgba(0, 136, 232, 1) 0%,
-    rgba(0, 182, 198, 1) 0%,
-    rgba(0, 136, 232, 1) 100%
-  );
-  background: -o-linear-gradient(
-    -45deg,
-    rgba(0, 136, 232, 1) 0%,
-    rgba(0, 182, 198, 1) 0%,
-    rgba(0, 136, 232, 1) 100%
-  );
-  background: -ms-linear-gradient(
-    -45deg,
-    rgba(0, 136, 232, 1) 0%,
-    rgba(0, 182, 198, 1) 0%,
-    rgba(0, 136, 232, 1) 100%
-  );
-  background: linear-gradient(
-    135deg,
-    rgba(0, 136, 232, 1) 0%,
-    rgba(0, 182, 198, 1) 0%,
-    rgba(0, 136, 232, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0088e8', endColorstr='#0088e8', GradientType=1 );
+  background-color: #483a9c;
 }
 
 @media (max-width: 765px) {
@@ -1296,7 +1262,7 @@ footer .social li {
 footer .social li a {
   color: #fff;
   text-align: center;
-  background-color: #00b4c6;
+  background-color: #483a9c;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -1310,7 +1276,7 @@ footer .social li a {
 }
 
 footer .social li a:hover {
-  background-color: #0088e8;
+  background-color: #7660fc;
   color: #fff;
 }
 
@@ -1340,7 +1306,7 @@ preloader
 */
 #preloader {
   overflow: hidden;
-  background-image: linear-gradient(145deg, #00b4c6 0%, #0088e8 100%);
+  background-image: linear-gradient(145deg, #483a9c 0%, #7660fc 100%);
   left: 0;
   right: 0;
   top: 0;
