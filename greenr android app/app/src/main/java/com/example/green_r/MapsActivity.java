@@ -27,13 +27,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
+     * exemple marqueurs sur l'ephec
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -41,7 +35,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Add a marker in Sydney and move the camera
         LatLng Ephec = new LatLng(50.665934, 4.612096);
-        mMap.addMarker(new MarkerOptions().position(Ephec).title("Marker in Ephec"));
+        mMap.addMarker(new MarkerOptions().position(Ephec).title("Ephec"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Ephec));
     }
 }
