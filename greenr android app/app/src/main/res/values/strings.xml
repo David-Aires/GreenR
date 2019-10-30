@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">green-r</string>
-    <string name="title_activity_maps">green-r</string>
-    <string name="valueCO2">405</string>
-    <string name="valueTemp">16</string>
-    <string name="ValueHum">80</string>
-</resources>
