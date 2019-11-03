@@ -3,13 +3,13 @@
 export default [
   {
     title: 'La position de nos différentes AirBox ',
-    image: 'https://green-r.be/app/img/airbox_icon.png',
+    image: 'https://zupimages.net/up/19/44/hdy1.png',
     cta: 'Voir', 
     horizontal: true
   },
   {
     title: 'A proximité',
-    image: 'https://zupimages.net/up/19/44/ap47.jpeg',
+    image: 'https://zupimages.net/up/19/44/e9s1.jpeg',
     cta: 'Voir'
   },
   {
