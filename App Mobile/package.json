@@ -1,31 +1,56 @@
 {
+  "name": "argon-react-native",
+  "version": "1.2.0",
+  "description": "Argon React Native, based on Argon Design System. Coded by Creative Tim",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
     "eject": "expo eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativetimofficial/argon-react-native.git"
+  },
   "dependencies": {
-    "expo": "^35.0.0",
-    "native-base": "^2.13.8",
+    "expo": "^34.0.3",
+    "expo-asset": "^6.0.0",
+    "expo-font": "^6.0.1",
+    "galio-framework": "^0.6.1",
+    "prop-types": "^15.7.2",
     "react": "16.8.3",
-    "react-dom": "16.8.3",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-gesture-handler": "~1.3.0",
-    "react-native-reanimated": "~1.2.0",
-    "react-native-screens": "^2.0.0-alpha.4",
-    "react-native-spinkit": "^1.5.0",
-    "react-native-vector-icons": "^6.6.0",
-    "react-native-web": "^0.11.7",
-    "react-navigation": "^4.0.10",
-    "react-navigation-drawer": "^2.2.2",
-    "react-navigation-stack": "^1.10.0",
-    "react-native-maps": "~0.25.0"
+    "react-native-maps": "0.26.1",
+    "react-native-modal-dropdown": "^0.6.2",
+    "react-navigation": "^3.11.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^7.1.0"
+    "babel-preset-expo": "^5.0.0"
   },
-  "private": true
+  "keywords": [
+    "argon react native",
+    "argon design system",
+    "argon app react native",
+    "argon iOS",
+    "react native iOS",
+    "creative tim",
+    "argon Android",
+    "react native ui kit",
+    "react native expo",
+    "freebie",
+    "react native argon design",
+    "react native galio",
+    "galio argon free",
+    "galio react native free app",
+    "argon expo react native",
+    "react native ui template"
+  ],
+  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/argon-react-native/issues"
+  },
+  "homepage": "https://demos.creative-tim.com/argon-react-native"
 }

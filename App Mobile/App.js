@@ -1,70 +1,75 @@
 import React from 'react';
-import { 
-  StyleSheet, 
-  Text,
-  Image, 
-  View,
-  ActivityIndicator,
-  SafeAreaView,
-  ScrollView,
-  Dimensions,
- } from 'react-native';
+import { Image } from 'react-native';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
+import { Block, GalioProvider } from 'galio-framework';
 
+import Screens from './navigation/Screens';
+import { Images, articles, argonTheme } from './constants';
 
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
-import {createDrawerNavigator, DrawerView} from 'react-navigation-drawer'
-import { DrawerNavigatorItems } from 'react-navigation-drawer'
-import Icon from 'react-native-vector-icons/MaterialIcons';
+// cache app images
+const assetImages = [
+  Images.Onboarding,
+  Images.LogoOnboarding,
+  Images.Logo,
+  Images.Map,
+  Images.ArgonLogo,
+  Images.iOSLogo,
+  Images.androidLogo
+];
 
+// cache product images
+articles.map(article => assetImages.push(article.image));
 
-import Dashboard from './screens/Dashboard'
-import HomeScreen from './screens/homeScreen'
-import Temp from './screens/Temp'
-
-
-const MainNavigator = createStackNavigator({
-  HomeScreen: {
-    screen: HomeScreen,
-  },
-  Dashboard: Dashboard,
-});
-
-const CustomDrawerComponent = (props) => (
-  <SafeAreaView style={{flex:1, backgroundColor:'#483a9c'}}>
-    <View style={{height:150,backgroundColor: '#483a9c', alignItems:'center',justifyContent:'center', flexDirection:'row'}}>
-      <Text style={{color: '#fff',fontWeight:'bold',fontSize:20}}>Green</Text>
-      <Image source={require('./src/img/logo.png')} style={{height: 60, width:70}} />
-    </View>
-    <ScrollView>
-      <DrawerNavigatorItems {...props}/>
-    </ScrollView>
-    <View style={{alignItems:'center',position: 'absolute', left: 0, right: 0, bottom: 0}}><Text style={{color: '#fff',fontWeight:'bold'}}>Copyright © 2019 GREEN-R</Text></View>
-  </SafeAreaView>
-)
-
-
-const MainDrawer = createDrawerNavigator({
-  Map: {
-    screen: MainNavigator,
-    navigationOptions : {
-      drawerIcon: ({tintColor}) => (<Icon name='streetview' style={{fontSize:14,color:tintColor}}></Icon>)
+function cacheImages(images) {
+  return images.map(image => {
+    if (typeof image === 'string') {
+      return Image.prefetch(image);
+    } else {
+      return Asset.fromModule(image).downloadAsync();
     }
-  },
-  Temp: Temp
-}, {
-  contentComponent: CustomDrawerComponent,
-  contentOptions: {
-    activeTintColor: 'yellowgreen',
-    inactiveTintColor: '#fff'
-  }
+  });
 }
-)
 
+export default class App extends React.Component {
+  state = {
+    isLoadingComplete: false,
+  }
+  
+  render() {
+    if(!this.state.isLoadingComplete) {
+      return (
+        <AppLoading
+          startAsync={this._loadResourcesAsync}
+          onError={this._handleLoadingError}
+          onFinish={this._handleFinishLoading}
+        />
+      );
+    } else {
+      return (
+        <GalioProvider theme={argonTheme}>
+          <Block flex>
+            <Screens />
+          </Block>
+        </GalioProvider>
+      );
+    }
+  }
 
+  _loadResourcesAsync = async () => {
+    return Promise.all([
+      ...cacheImages(assetImages),
+    ]);
+  };
 
-const Drawer = createAppContainer(MainDrawer);
+  _handleLoadingError = error => {
+    // In this case, you might want to report the error to your error
+    // reporting service, for example Sentry
+    console.warn(error);
+  };
 
+  _handleFinishLoading = () => {
+    this.setState({ isLoadingComplete: true });
+  };
 
-
-export default Drawer;
+}

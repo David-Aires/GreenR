@@ -1,20 +1,19 @@
 {
   "expo": {
-    "name": "GreenR",
-    "slug": "GreenR",
+    "name": "Argon FREE React Native",
+    "slug": "argon-free-react-native",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
+    "sdkVersion": "34.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
-    "version": "1.0.0",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "./assets/splash2.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
