@@ -17,3 +17,6 @@ Nous avons également sécurisé l'API afin d'empêcher toute transaction dans n
 //Placer ici les différentes users stories de se sprint qui ne sont pas finies et ajouter une brève explication de la raison pour laquelle elle n'est pas finie.
 
 ## Conclusion du Sprint
+Le projet avance bien. Nous arrivons tout doucement vers la phase finale du projet, c'est-à-dire à la réalisation d'un produit finale vendable.
+Nous avons cependant quelques retards au niveau de l'application mobile.
+Le site web et l'affichage de données
