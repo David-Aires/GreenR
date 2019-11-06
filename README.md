@@ -5,7 +5,7 @@ Pour cela nous avons mis au point un boîtier avec un capteur de CO2,températur
 Une api en libre service sur notre [site](https://green-r.be/index.php) permet de récupérer les données librement.
 Nous l'utilisons pour afficher la position des capteurs sur notre site et sur notre application.
 
-## test de l'application  
+## Test de l'application  
 
 Pour le moment, pour tester l'application il faut passer par des intermédiaires(phase de développement).    
 1.télécharger node js et récupérer le dossier app mobile sur le github.   
@@ -34,3 +34,12 @@ sur notre [site](https://green-r.be/include/assistance.php) vous pouvez trouvez:
 * les données et l'emplacement des boîtiers [ici](https://green-r.be/app/html/tracking.html).  
 * L'[API](https://green-r.be/api/stats.php) pour utiliser les données et les récupérer librement.  
 * Une zone pour [commander](https://green-r.be/include/commande.php) un boîtier.  
+
+## Information  
+
+ Différentes informations sont trouvables sur le [wiki](https://github.com/David-Aires/GreenR/wiki) du projet.  
+ 
+## Contributeurs  
+Aires David, Allard Renaud, Azzouz Souhaib, Lebrun Quentin, Tongres Cyril, Vanden Herrewegen Guillaume.  
+
+
