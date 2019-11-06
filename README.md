@@ -1,4 +1,4 @@
-# Projet d'intégration : GreenR  
+# Projet d'intégration : GreenR  ![marker](https://github.com/David-Aires/GreenR/blob/master/App%20Mobile/assets/airbox_icon.png?raw=true)
 
 GreenR est un projet qui consiste a sensibiliser les personnes à la qualité de l'air qu'il respire et surtout en sa concentration en CO2.
 Pour cela nous avons mis au point un boîtier avec un capteur de CO2,température,humidité et gps capable d'envoyer des données a une base de donnée.  
@@ -35,11 +35,18 @@ sur notre [site](https://green-r.be/include/assistance.php) vous pouvez trouvez:
 * L'[API](https://green-r.be/api/stats.php) pour utiliser les données et les récupérer librement.  
 * Une zone pour [commander](https://green-r.be/include/commande.php) un boîtier.  
 
+
 ## Information  
 
- Différentes informations sont trouvables sur le [wiki](https://github.com/David-Aires/GreenR/wiki) du projet.  
+Le projet a été réalisé avec la méthode Scrum.
+Les rapports à la fin de chaque sprint sont disponibles [ici](https://github.com/David-Aires/GreenR/tree/master/Rapport)
+Différentes informations sont trouvables sur le [wiki](https://github.com/David-Aires/GreenR/wiki) du projet.  
  
 ## Contributeurs  
 Aires David, Allard Renaud, Azzouz Souhaib, Lebrun Quentin, Tongres Cyril, Vanden Herrewegen Guillaume.  
-
-
+  
+  
+  
+---------------------------------
+*Ce projet a été réalisé dans le cadre du projet d"intégration en 3éme BAC à [l'Ephec](https://www.ephec.be/).*
+*Entre septembre et décembre 2019.*
