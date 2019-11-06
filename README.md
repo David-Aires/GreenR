@@ -24,7 +24,7 @@ Pour le moment, pour tester l'application il faut passer par des intermédiaires
 * vérifier que vous avez instalé les bons packages dans la bonne version.
 * Il existe des forums d'aide pour chaque packages.
 
-Vous pouvez raporter vos problémes ici https://github.com/David-Aires/GreenR/issues pour potentiellement recevoir de l'aide.  
+Vous pouvez raporter vos problémes [ici](https://github.com/David-Aires/GreenR/issues) pour potentiellement recevoir de l'aide.  
 Indiquez votre probléme, le potentiel message d'erreur si possible et le contenu de votre fichier package.json
 
 ## Site
@@ -48,5 +48,5 @@ Aires David, Allard Renaud, Azzouz Souhaib, Lebrun Quentin, Tongres Cyril, Vande
   
   
 ---------------------------------
-*Ce projet a été réalisé dans le cadre du projet d"intégration en 3éme BAC à [l'Ephec](https://www.ephec.be/).*
-*Entre septembre et décembre 2019.*
+*Ce projet a été réalisé dans le cadre du projet d"intégration en 3éme BAC à [l'Ephec](https://www.ephec.be/),*
+*Entre septembre et décembre 2019, dans la section TI de la haute école.*
