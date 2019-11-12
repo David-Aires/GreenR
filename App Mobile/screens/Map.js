@@ -10,10 +10,26 @@ import {  AppRegistry,
   Dimensions, } from 'react-native';
 
   import markerImg from '../assets/airbox_icon.png';
+  import { createAppContainer } from 'react-navigation';
+  import { createStackNavigator } from 'react-navigation-stack';
 
 export default class App extends React.Component {
-  
-  
+
+  class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+        <Button
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+      </View>
+    );
+  }
+}
+
+
   render() {
     /*{this.state.markers.map((marker, index) => {
       return (
@@ -25,7 +41,7 @@ export default class App extends React.Component {
         </MapView.Marker>
       );
     })}*/
-    
+
     state = {
       markers: [
         {
@@ -47,7 +63,7 @@ export default class App extends React.Component {
 
 
     return (
-      
+
       <View style={styles.container}>
         <MapView style={styles.map}
           initialRegion={{
@@ -67,7 +83,7 @@ export default class App extends React.Component {
             image={markerImg}
          />
          <MapView.Marker
-            coordinate={{latitude: 50.667003, 
+            coordinate={{latitude: 50.667003,
               longitude: 4.616839,}}
             title={"Martin V"}
             description={"Etat actuel: Bon "}
@@ -78,7 +94,7 @@ export default class App extends React.Component {
       </MapView>
  </View>
       /*<View style={styles.container}>
-        <MapView 
+        <MapView
         region={this.state.region}
         annotations={this.state.markers}
         zoomEnabled={true}
