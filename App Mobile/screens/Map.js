@@ -15,21 +15,19 @@ import {  AppRegistry,
 
 export default class App extends React.Component {
 
-<<<<<<< Updated upstream
-  class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
-        />
-      </View>
-    );
-  }
-}
-=======
+//   class DetailsScreen extends React.Component {
+//   render() {
+//     return (
+//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//         <Text>Details Screen</Text>
+//         <Button
+//           title="Go back"
+//           onPress={() => this.props.navigation.goBack()}
+//         />
+//       </View>
+//     );
+//   }
+// }
   state ={
     data: []
   };
@@ -47,7 +45,6 @@ export default class App extends React.Component {
             console.log("Error fetching data-----------", err);
         }
     };
->>>>>>> Stashed changes
 
 
   render() {
