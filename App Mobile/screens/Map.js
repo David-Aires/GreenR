@@ -14,6 +14,7 @@ import {  AppRegistry,
   import { createStackNavigator } from 'react-navigation-stack';
 
 export default class App extends React.Component {
+<<<<<<< Updated upstream
 
 //   class DetailsScreen extends React.Component {
 //   render() {
@@ -78,7 +79,34 @@ export default class App extends React.Component {
       },
     };
 
+=======
 
+
+  constructor(props){
+    super(props);
+    this.state ={ coord : []}
+  }
+
+  componentDidMount(){
+    return fetch ('https://green-r.be/api/stats.php?position=ALL')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson,
+        }, function(){
+
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+>>>>>>> Stashed changes
+
+  renderCoo = () =>{
     return (
 
       <View style={styles.container}>
@@ -92,6 +120,7 @@ export default class App extends React.Component {
           zoomEnabled={true}
           style={styles.mapStyle}
         >
+<<<<<<< Updated upstream
         <MapView.Marker
             coordinate={{latitude: 50.665791,
               longitude: 4.612230,}}
@@ -117,7 +146,83 @@ export default class App extends React.Component {
         zoomEnabled={true}
         style={styles.mapStyle} />
       </View>*/
+=======
+
+        {this.state.coord.map(marker => {
+      return (
+        <MapView.Marker key={index}
+        coordinate={ {longitude: {marker.LON}},{latitude: {marker.LAT}} }
+        //title={this.state.markerA.title}
+        //description={this.state.markerA.description}
+        image={markerImg}
+        >
+          <Animated.View style={[styles.markerWrap]}>
+            <Animated.View style={[styles.ring]} />
+            <View style={styles.marker} />
+          </Animated.View>
+        </MapView.Marker>
+      );
+    })}
+
+    //     {this.state.markerB.map((marker, index) => {
+    //   return (
+    //     <MapView.Marker key={index}
+    //     coordinate={marker.coordinate}
+    //     title={this.state.markerB.title}
+    //     description={this.state.markerB.description}
+    //     image={markerImg}
+    //     >
+    //       <Animated.View style={[styles.markerWrap]}>
+    //         <Animated.View style={[styles.ring]} />
+    //         <View style={styles.marker} />
+    //       </Animated.View>
+    //     </MapView.Marker>
+    //   );
+    // })}
+      </MapView>
+ </View>
+>>>>>>> Stashed changes
     );
+  }
+
+
+  //   this.state={
+  //     markerA: [
+  //       {
+  //         coordinate: {
+  //           latitude: 50.665791,
+  //           longitude: 4.612230,
+  //         },
+  //         title: "EPHEC",
+  //         description: "Etat actuel: Bon\n Température: 12°C\n Humidité: 62%",
+  //       },
+  //     ],
+  //     markerB: [
+  //       {
+  //         coordinate: {
+  //           latitude: 50.667003,
+  //           longitude: 4.616839,
+  //         },
+  //         title: "Martin V",
+  //         description: "Etat actuel: Très bon\n Température: 12.5°C\n Humidité: 55%",
+  //       },
+  //     ],
+  //     region: {
+  //       latitude: 50.665791,
+  //       longitude: 4.612230,
+  //       latitudeDelta: 0.005,
+  //       longitudeDelta: 0.005,
+  //     },
+  //   }
+  // }
+
+  render() {
+    return (
+      <Block>
+        {this.renderCoo()}
+      </Block>
+    );
+
   }
 }
 
