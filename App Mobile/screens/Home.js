@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Dimensions, ScrollView, FlatList, ActivityIndicator, Text, View } from 'react-native';
 import { Block, theme } from 'galio-framework';
 
 import { Card } from '../components';
@@ -8,9 +8,32 @@ const { width } = Dimensions.get('screen');
 
 class Home extends React.Component {
 
-  /**<Card item={articles[0]} horizontal  />                
-          <Card item={articles[3]} full />
-          <Card item={articles[4]} full /> */
+
+
+  constructor(props){
+    super(props);
+    this.state ={ isLoading: true}
+  }
+
+  componentDidMount(){
+    //return fetch('https://facebook.github.io/react-native/movies.json')
+    return fetch ('https://green-r.be/api/stats.php?box=1&table=CROSS_CENTER&relever=dernier')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson,
+        }, function(){
+
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+
 
   renderActu = () => {
     return (
@@ -18,6 +41,13 @@ class Home extends React.Component {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.articles}>
         <Block flex>
+        
+        <FlatList
+          data={this.state.dataSource}
+          renderItem={({item}) => <Text>{item.SERIAL_NUM}, {item.ID_POS},{item.ID_AIR},{item.DATE}</Text>}
+          keyExtractor={({SERIAL_NUM}, index) => SERIAL_NUM}
+        />
+
         <Card item={articles[1]} full />
         <Card item={articles[2]} full /> 
 
@@ -26,7 +56,16 @@ class Home extends React.Component {
     )
   }
 
+
+
   render() {
+    if(this.state.isLoading){
+      return(
+        <View style={{flex: 1, padding: 20}}>
+          <ActivityIndicator/>
+        </View>
+      )
+    }
     return (
       <Block flex center style={styles.home}>
         {this.renderActu()}
