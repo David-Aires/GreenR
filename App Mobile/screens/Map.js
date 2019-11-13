@@ -37,7 +37,6 @@ export default class App extends React.Component {
         console.error(error);
       });
   }
->>>>>>> Stashed changes
 
   renderCoo = () =>{
     return (
@@ -53,34 +52,7 @@ export default class App extends React.Component {
           zoomEnabled={true}
           style={styles.mapStyle}
         >
-<<<<<<< Updated upstream
-        <MapView.Marker
-            coordinate={{latitude: 50.665791,
-              longitude: 4.612230,}}
-            title={"EPHEC"}
-            description={"Etat actuel: Bon "}
-            image={markerImg}
-         />
-         <MapView.Marker
-            coordinate={{latitude: 50.667003,
-              longitude: 4.616839,}}
-            title={"Martin V"}
-            description={"Etat actuel: Bon "}
-            image={markerImg}
-         />
-
-
-      </MapView>
- </View>
-      /*<View style={styles.container}>
-        <MapView
-        region={this.state.region}
-        annotations={this.state.markers}
-        zoomEnabled={true}
-        style={styles.mapStyle} />
-      </View>*/
-=======
-
+        
         {this.state.coord.map(marker => {
       return (
         <MapView.Marker key={index}
@@ -114,7 +86,6 @@ export default class App extends React.Component {
     // })}
       </MapView>
  </View>
->>>>>>> Stashed changes
     );
   }
 
