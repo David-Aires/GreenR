@@ -14,7 +14,7 @@ const iPhoneX = () => Platform.OS === 'ios' && (height === 812 || width === 812 
 
 //cloche de notification
 const BellButton = ({isWhite, style, navigation}) => (
-  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Profile')}>  
+  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('A_Propos')}>  
     <Icon
       family="ArgonExtra"
       size={16}
@@ -39,7 +39,7 @@ const MapButton = ({isWhite, style, navigation}) => (
 
 //
 const SearchButton = ({isWhite, style, navigation}) => (
-  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Profile')}>
+  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('A_Propos')}>
     <Icon
       size={16}
       family="Galio"
@@ -86,9 +86,9 @@ class Header extends React.Component {
           <BellButton key='chat-deals' navigation={navigation} isWhite={white} />,
           <MapButton key='basket-deals' navigation={navigation} isWhite={white} />
         ]);
-      case 'Profile':
+      case 'A_Propos':
         return ([
-          <BellButton key='chat-profile' navigation={navigation} isWhite={white} />,
+          <BellButton key='chat-A_Propos' navigation={navigation} isWhite={white} />,
           <MapButton key='basket-deals' navigation={navigation} isWhite={white} />
         ]);
       case 'Product':
@@ -178,7 +178,7 @@ class Header extends React.Component {
   render() {
     const { back, title, white, transparent, bgColor, iconColor, titleColor, navigation, ...props } = this.props;
     const { routeName } = navigation.state;
-    const noShadow = ['Search', 'Categories', 'Deals', 'Map', 'Profile'].includes(routeName);
+    const noShadow = ['Search', 'Categories', 'Deals', 'Map', 'A_Propos'].includes(routeName);
     const headerStyles = [
       !noShadow ? styles.shadow : null,
       transparent ? { backgroundColor: 'rgba(0,0,0,0)' } : null,

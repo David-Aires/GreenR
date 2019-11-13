@@ -2,7 +2,7 @@
 const Onboarding = require("../assets/splash3.png");
 const Logo = require("../assets/imgs/green_r-logo.png");
 const LogoOnboarding = require("../assets/imgs/argon-logo-onboarding.png");
-//const RegisterBackground = require("../assets/imgs/register-bg.png");
+const A_ProposBackground = require("../assets/imgs/A_Propos-bg.png");
 const Map = require("../assets/imgs/getPro-bg.png");
 const ArgonLogo = require("../assets/imgs/argonlogo.png");
 const iOSLogo = require("../assets/imgs/ios.png");
@@ -27,7 +27,7 @@ export default {
   Onboarding,
   Logo,
   LogoOnboarding,
-  //RegisterBackground,
+  A_ProposBackground,
   Viewed,
   Products,
   Map,

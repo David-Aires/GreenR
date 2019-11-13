@@ -39,7 +39,7 @@ class DrawerItem extends React.Component {
             color={focused ? "#9acd32" : "white"}
           />
         );
-      case "Actu":
+      case "Actuality":
         return (
           <Icon
             name="spaceship"
@@ -48,7 +48,7 @@ class DrawerItem extends React.Component {
             color={focused ? "#9acd32" : "white"}
           />
         );
-      case "Profile":
+      case "A_Propos1":
         return (
           <Icon
             name="chart-pie-35"
@@ -57,7 +57,7 @@ class DrawerItem extends React.Component {
             color={focused ? "#9acd32" : "white"}
           />
         );
-      case "Account":
+      case "About us":
         return (
           <Icon
             name="calendar-date"
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     borderRadius: 4
   },
   shadow: {
-    shadowColor: theme.COLORS.BLACK,
+    shadowColor: theme.COLORS.WHITE,
     shadowOffset: {
       width: 0,
       height: 2

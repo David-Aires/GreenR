@@ -12,7 +12,7 @@ import { Block } from "galio-framework";
 import Home from "../screens/Home";
 import Onboarding from "../screens/Onboarding";
 import Map from "../screens/Map";
-//import Register from "../screens/Register";
+import A_Propos from "../screens/A_Propos";
 import Elements from "../screens/Elements";
 import Actu from "../screens/Actu";
 // drawer
@@ -132,15 +132,6 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
-    /*
-    Account: {
-      screen: Register,
-      navigationOptions: navOpt => ({
-        drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="Register" title="Account" />
-        )
-      })
-    },*/
     Map: {
       screen: MapStack,
       navigationOptions: navOpt => ({
@@ -153,10 +144,18 @@ const AppStack = createDrawerNavigator(
       screen: ActuStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="Actu" title="Actu" />
+          <DrawerItem focused={focused} screen="Actu" title="Actuality" />
         )
       })
-    }
+    },
+    A_Propos: {
+      screen: A_Propos,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="A_Propos" title="About us" />
+        )
+      })
+    },
   },
   Menu
 );
