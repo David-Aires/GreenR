@@ -15,6 +15,7 @@ import {  AppRegistry,
 
 export default class App extends React.Component {
 
+<<<<<<< Updated upstream
   class DetailsScreen extends React.Component {
   render() {
     return (
@@ -28,6 +29,25 @@ export default class App extends React.Component {
     );
   }
 }
+=======
+  state ={
+    data: []
+  };
+
+  sync componentDidMount() {
+        //Have a try and catch block for catching errors.
+        try {
+
+            const GreenrApiCall = await fetch('https://green-r.be/api/stats.php?position=ALL');
+            const BoxPosition = await GreenrApiCall.json();
+
+            this.setState({ data: json.results });
+
+        } catch(err) {
+            console.log("Error fetching data-----------", err);
+        }
+    };
+>>>>>>> Stashed changes
 
 
   render() {
