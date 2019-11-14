@@ -52,7 +52,7 @@ export default class App extends React.Component {
           zoomEnabled={true}
           style={styles.mapStyle}
         >
-        
+
         {this.state.coord.map(marker => {
       return (
         <MapView.Marker key={index}
@@ -68,22 +68,6 @@ export default class App extends React.Component {
         </MapView.Marker>
       );
     })}
-
-    //     {this.state.markerB.map((marker, index) => {
-    //   return (
-    //     <MapView.Marker key={index}
-    //     coordinate={marker.coordinate}
-    //     title={this.state.markerB.title}
-    //     description={this.state.markerB.description}
-    //     image={markerImg}
-    //     >
-    //       <Animated.View style={[styles.markerWrap]}>
-    //         <Animated.View style={[styles.ring]} />
-    //         <View style={styles.marker} />
-    //       </Animated.View>
-    //     </MapView.Marker>
-    //   );
-    // })}
       </MapView>
  </View>
     );
