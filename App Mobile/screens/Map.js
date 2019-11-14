@@ -10,117 +10,55 @@ import {  AppRegistry,
   Dimensions, } from 'react-native';
 
   import markerImg from '../assets/airbox_icon.png';
+  import { createAppContainer } from 'react-navigation';
+  import { createStackNavigator } from 'react-navigation-stack';
 
 export default class App extends React.Component {
-  
-  
+
   constructor(props){
     super(props);
-
-    this.state={
-      markerA: [
-        {
-          coordinate: {
-            latitude: 50.665791,
-            longitude: 4.612230,
-          },
-          title: "EPHEC",
-          description: "Etat actuel: Bon\n Température: 12°C\n Humidité: 62%",
-        },
-      ],
-      markerB: [
-        {
-          coordinate: {
-            latitude: 50.667003,
-            longitude: 4.616839,
-          },
-          title: "Martin V",
-          description: "Etat actuel: Très bon\n Température: 12.5°C\n Humidité: 55%",
-        },
-      ],
-      region: {
-        latitude: 50.665791,
-        longitude: 4.612230,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
-      },
-    }
+    this.state ={ coord : []}
   }
-  
-  render() {
-    /*
-         
-    state = {
-      markers: [
-        {
-          coordinate: {
-            latitude: 50.665791,
-            longitude: 4.612230,
-          },
-          title: "EPHEC",
-          description: "SCHOOL",
-        },
-      ],
-      region: {
-        latitude: 50.665791,
-        longitude: 4.612230,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
-      },
-    };
 
-     <MapView.Marker
-            coordinate={this.state.markerA.latidude, this.state.markerA.longitude}
-            title={this.state.markerA.title}
-            description={this.state.markerA.description}
-            image={markerImg}
-         />
+  componentDidMount(){
+    return fetch ('https://green-r.be/api/stats.php?position=ALL')
+      .then((response) => response.json())
+      .then((responseJson) => {
 
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson,
+        }, function(){
 
-         <MapView.Marker
-            coordinate={this.state.markerB.coordinate}
-            title={this.state.markerB.title}
-            description={this.state.markerB.description}
-            image={markerImg}
-         />
-      */
+        });
 
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+
+  renderCoo = () =>{
     return (
-      
+
       <View style={styles.container}>
         <MapView style={styles.map}
           initialRegion={{
-            latitude: this.state.region.latitude,
-            longitude: this.state.region.longitude,
-            latitudeDelta: this.state.region.latitudeDelta,
-            longitudeDelta: this.state.region.longitudeDelta,
+            latitude: 50.665791,
+            longitude: 4.612230,
+            latitudeDelta: 0.005,
+            longitudeDelta: 0.005,
           }}
           zoomEnabled={true}
           style={styles.mapStyle}
         >
-        
-        {this.state.markerA.map((marker, index) => {
-      return (
-        <MapView.Marker key={index} 
-        coordinate={marker.coordinate}
-        title={this.state.markerA.title}
-        description={this.state.markerA.description}
-        image={markerImg}
-        >
-          <Animated.View style={[styles.markerWrap]}>
-            <Animated.View style={[styles.ring]} />
-            <View style={styles.marker} />
-          </Animated.View>
-        </MapView.Marker>
-      );
-    })}
 
-        {this.state.markerB.map((marker, index) => {
+        {this.state.coord.map(marker => {
       return (
-        <MapView.Marker key={index} 
-        coordinate={marker.coordinate}
-        title={this.state.markerB.title}
-        description={this.state.markerB.description}
+        <MapView.Marker key={index}
+        coordinate={ {longitude: {marker.LON}},{latitude: {marker.LAT}} }
+        //title={this.state.markerA.title}
+        //description={this.state.markerA.description}
         image={markerImg}
         >
           <Animated.View style={[styles.markerWrap]}>
@@ -132,14 +70,47 @@ export default class App extends React.Component {
     })}
       </MapView>
  </View>
-      /*<View style={styles.container}>
-        <MapView 
-        region={this.state.region}
-        annotations={this.state.markers}
-        zoomEnabled={true}
-        style={styles.mapStyle} />
-      </View>*/
     );
+  }
+
+
+  //   this.state={
+  //     markerA: [
+  //       {
+  //         coordinate: {
+  //           latitude: 50.665791,
+  //           longitude: 4.612230,
+  //         },
+  //         title: "EPHEC",
+  //         description: "Etat actuel: Bon\n Température: 12°C\n Humidité: 62%",
+  //       },
+  //     ],
+  //     markerB: [
+  //       {
+  //         coordinate: {
+  //           latitude: 50.667003,
+  //           longitude: 4.616839,
+  //         },
+  //         title: "Martin V",
+  //         description: "Etat actuel: Très bon\n Température: 12.5°C\n Humidité: 55%",
+  //       },
+  //     ],
+  //     region: {
+  //       latitude: 50.665791,
+  //       longitude: 4.612230,
+  //       latitudeDelta: 0.005,
+  //       longitudeDelta: 0.005,
+  //     },
+  //   }
+  // }
+
+  render() {
+    return (
+      <Block>
+        {this.renderCoo()}
+      </Block>
+    );
+
   }
 }
 
