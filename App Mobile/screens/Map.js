@@ -98,6 +98,7 @@ export default class App extends React.Component {
           zoomEnabled={true}
           style={styles.mapStyle}
         >
+<<<<<<< Updated upstream
         
         {this.state.markerA.map((marker, index) => {
       return (
@@ -105,6 +106,15 @@ export default class App extends React.Component {
         coordinate={marker.coordinate}
         title={this.state.markerA.title}
         description={this.state.markerA.description}
+=======
+
+        {this.state.coord.map((marker,index) => {
+      return (
+        <MapView.Marker key={index}
+        coordinate={ {longitude: coord.LON},{latitude: coord.LAT} }
+        //title={this.state.markerA.title}
+        //description={this.state.markerA.description}
+>>>>>>> Stashed changes
         image={markerImg}
         >
           <Animated.View style={[styles.markerWrap]}>
@@ -114,6 +124,7 @@ export default class App extends React.Component {
         </MapView.Marker>
       );
     })}
+<<<<<<< Updated upstream
 
         {this.state.markerB.map((marker, index) => {
       return (
@@ -139,6 +150,10 @@ export default class App extends React.Component {
         zoomEnabled={true}
         style={styles.mapStyle} />
       </View>*/
+=======
+    </MapView>
+   </View>
+>>>>>>> Stashed changes
     );
   }
 }
