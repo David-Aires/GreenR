@@ -4,7 +4,9 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  View,
+  FlatList
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
@@ -67,60 +69,34 @@ class A_Propos extends React.Component {
                     behavior="padding"
                     enabled
                   >
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
-                        borderless
-                        placeholder="Name"
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="hat-3"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                    </Block>
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
-                        borderless
-                        placeholder="Email"
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="ic_mail_24px"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                    </Block>
-                    <Block width={width * 0.8}>
-                      <Input
-                        password
-                        borderless
-                        placeholder="Password"
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="padlock-unlocked"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                      <Block row style={styles.passwordCheck}>
-                        <Text size={12} color={argonTheme.COLORS.MUTED}>
-                          password strength:
+
+                      <Block>
+                        <Text padding={30}>
+                          <Text color="#9acd32" center>Green-R</Text> 
+                          est un projet lancé par des étudiants, 
+                          il a pour but de <Text color="#9acd32">résoudre une problématique croissante et réelle</Text> 
+                          que nous rencontrons au quotidien. 
+                          Nous voulons donner un accès à des données sur <Text color="#9acd32">la qualité de l’air</Text> sur différentes entités 
+                          <Text color="#9acd32">(école, commune, centre sportif, …)</Text> à l'aide de notre produit, 
+                          pouvant ainsi permettre une analyse de la qualité de l’air. Avec ces informations, 
+                          des décisions pourront être prises si la qualité de l’air se révèle être mauvaise :
+                          
                         </Text>
-                        <Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
-                          {" "}
-                          strong
-                        </Text>
-                      </Block>
+
+
+                        
+                        <View style={styles.container} padding={20}  >
+                              <FlatList
+                                data={[
+                                  {key: '                                    '},
+                                  {key: 'Réduction de la vitesse des voitures'},
+                                  {key: 'Plantation d’arbres'},
+                                  {key: 'Aménagement des voiries'},
+                                  {key: 'Cas extrême : fermeture des voiries'},
+                                ]}
+                                renderItem={({item}) => <Text style={styles.item} color={"black"}     >{item.key}</Text>}
+                              />
+                        </View>
                     </Block>
                     <Block row width={width * 0.75}>
                       <Checkbox
