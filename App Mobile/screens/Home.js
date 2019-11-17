@@ -4,6 +4,9 @@ import { Block, theme } from 'galio-framework';
 
 import { Card } from '../components';
 import articles from '../constants/articles';
+import Map from 'Map';
+
+
 const { width } = Dimensions.get('screen');
 
 class Home extends React.Component {
@@ -17,7 +20,7 @@ class Home extends React.Component {
 
   componentDidMount(){
     //return fetch('https://facebook.github.io/react-native/movies.json')
-    return fetch ('https://green-r.be/api/stats.php?box=1&table=CROSS_CENTER&relever=dernier')
+    return fetch ('https://green-r.be/api/stats.php?box=1&table=AIR_STAT')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -44,8 +47,11 @@ class Home extends React.Component {
         
         <FlatList
           data={this.state.dataSource}
-          renderItem={({item}) => <Text>{item.SERIAL_NUM}, {item.ID_POS},{item.ID_AIR},{item.DATE}</Text>}
-          keyExtractor={({SERIAL_NUM}, index) => SERIAL_NUM}
+         
+          renderItem={({item}) => <Text>{item.ID_AIR}, {item.TEMPERATURE},{item.HUMIDITY},{item.CO2},{item.DATE}</Text>}
+          // for location
+          // renderItem={({item}) => <Text>{item.SERIAL_NUM}, {item.ID_POS},{item.ID_AIR},{item.DATE}</Text>}
+          keyExtractor={({ID_AIR}, index) => ID_AIR}
         />
 
         <Card item={articles[1]} full />
