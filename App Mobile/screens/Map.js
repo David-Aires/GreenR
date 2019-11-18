@@ -150,10 +150,12 @@ export default class App extends React.Component {
           description={this.state.marker1.description}
           image={markerImg}
           >
-            <Animated.View style={[styles.markerWrap]}>
-              <Animated.View style={[styles.ring]} />
-              <View style={styles.marker} />
-            </Animated.View>
+            <MapView.Callout tooltip style={styles.customView}>
+                <View style={styles.calloutText}>
+                  <Text>{marker.title}{"\n"}{marker.description}</Text>
+                </View>
+            </MapView.Callout>
+
           </MapView.Marker>
         );
       })}
@@ -166,10 +168,11 @@ export default class App extends React.Component {
           description={this.state.marker2.description}
           image={markerImg}
           >
-            <Animated.View style={[styles.markerWrap]}>
-              <Animated.View style={[styles.ring]} />
-              <View style={styles.marker} />
-            </Animated.View>
+            <MapView.Callout tooltip style={styles.customView}>
+                <View style={styles.calloutText}>
+                  <Text>{marker.title}{"\n"}{marker.description}</Text>
+                </View>
+            </MapView.Callout>
           </MapView.Marker>
         );
       })}
