@@ -723,8 +723,10 @@ welcome
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../images/banner-bg.png);
-  background-repeat: no-repeat;
+  /*background-image: url(../images/banner-bg.png);
+  background-repeat: no-repeat;*/
+  background-color: #6c58e7;
+  clip-path: polygon(50% 0%, 100% 0, 100% 89%, 91% 100%, 0 93%, 0 0);
 /*
 TRY IT ... with or without CENTER CENTER
   background-position: center center; 
@@ -734,6 +736,7 @@ TRY IT ... with or without CENTER CENTER
   height: 105vh;
   margin-top: -10vh;
 }
+
 
 .welcome-area .header-text {
   position: absolute;
@@ -754,6 +757,11 @@ TRY IT ... with or without CENTER CENTER
   letter-spacing: 1.4px;
   margin-bottom: 30px;
   color: #fff;
+  padding-top: 60px;
+}
+
+.welcome-area .header-text h1 strong{
+  color: yellowgreen;
 }
 
 .welcome-area .header-text p {
@@ -885,6 +893,7 @@ about
   font-size: 16px;
   line-height: 30px;
   letter-spacing: 0.5px;
+  padding-left: 15px;
 }
 
 #about2 ul li img {
@@ -893,7 +902,7 @@ about
 }
 
 #about2 ul li .text {
-  margin-left: 80px;
+ /* margin-left: 80px;*/
 }
 
 #about2 ul li .text h6 {
@@ -928,6 +937,7 @@ services
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   position: relative;
+  border-radius: 20%;
 }
 
 @media screen and (max-width: 920px) {
@@ -958,6 +968,10 @@ services
   position: relative;
 }
 
+.owl-carousel .owl-item img{
+  border-radius: 120%;
+}
+
 .service-item .icon img {
   position: absolute;
   top: 50%;
@@ -968,6 +982,7 @@ services
 #linkedin{
   margin-top: 30px;
   display: inline-block;
+  border-radius: unset;
 }
 
 .service-item .service-title {
@@ -1200,7 +1215,7 @@ contact
 
 .contact-form input,
 .contact-form textarea {
-  color: #777;
+  color: black;
   font-size: 14px;
   border: none;
   width: 100%;
@@ -1381,4 +1396,8 @@ preloader
   100% {
     opacity: 0;
   }
+}
+
+.row ul{
+  margin-left: 50px;
 }
