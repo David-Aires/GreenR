@@ -50,7 +50,7 @@ export default class App extends React.Component {
             longitude: 4.612230,
           },
           title: "EPHEC",
-          description: "Etat actuel: Bon\n Température: 12°C\n Humidité: 62%",
+          description: "Etat actuel: Bon\nTempérature: 12°C\nHumidité: 62%",
         },
       ],
       marker2: [
@@ -60,7 +60,7 @@ export default class App extends React.Component {
             longitude: 4.616839,
           },
           title: "Martin V",
-          description: "Etat actuel: Très bon\n Température: 12.5°C\n Humidité: 55%",
+          description: "Etat actuel: Très bon\nTempérature: 12.5°C\nHumidité: 55%",
         },
       ],
       region: {
