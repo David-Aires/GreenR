@@ -1,69 +1,29 @@
 import React from 'react';
 import MapView from 'react-native-maps';
-import {  AppRegistry,
+import { 
   StyleSheet,
   Text,
   View,
-  ScrollView,
-  Animated,
-  Image,
   Dimensions, } from 'react-native';
 
   import markerImg from '../assets/airbox_icon.png';
 
 export default class App extends React.Component {
 
-  componentDidMount(){
-    //return fetch('https://facebook.github.io/react-native/movies.json')
-    return fetch ('https://green-r.be/api/stats.php?box=1&table=AIR_STAT')
-      .then((response) => response.json())
-      .then((responseJson) => {
-
-        this.setState({
-          isLoading: false,
-          dataSource: responseJson,
-        }, function(){
-
-        });
-
-      })
-      .catch((error) =>{
-        console.error(error);
-      });
-  }
+  _isMounted = false;
 
 
   constructor(props){
     super(props);
 
-
-
-
     this.state={
-
+      
+      dataLength: null,
+      dataCaught: [],
       isLoading: true,
 
-      marker1: [
-        {
-          coordinate: {
-            latitude: 50.665791,
-            longitude: 4.612230,
-          },
-          title: "EPHEC",
-          description: "Etat actuel: Bon\nTempérature: 12°C\nHumidité: 62%",
-        },
-      ],
-      marker2: [
-        {
-          coordinate: {
-            latitude: 50.667003,
-            longitude: 4.616839,
-          },
-          title: "Martin V",
-          description: "Etat actuel: Très bon\nTempérature: 12.5°C\nHumidité: 55%",
-        },
-      ],
-      region: {
+     
+        region: {
         latitude: 50.665791,
         longitude: 4.612230,
         latitudeDelta: 0.005,
@@ -72,48 +32,123 @@ export default class App extends React.Component {
     }
   }
 
+ 
+  componentDidMount(){
+    this._isMounted = true;
+    this.catchAPIdata();
+  }
+
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+  
+
+  catchAPIdata= () =>{
+
+    fetch('https://green-r.be/api/stats.php?position=ALL')
+        .then((response) => response.json())
+        .then((responseJson) => {
+
+
+        
+
+          this.setState({
+            isLoading: false,
+                       
+          }, function(){
+              const dataCaught = responseJson;
+              const dataLength = Object.keys(dataCaught).length;
+
+              this.setState({
+                dataLength: dataLength,
+                dataCaught: dataCaught,
+              })
+
+              if (this._isMounted) {
+                this.setState({isLoading: false})
+              }
+
+
+          });
+        })
+        .catch((error) =>{
+          console.warn(error);
+        });
+  }
+
+/** 
+ attention cette partie crée des problèmes du type
+
+--->    Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. 
+ To fix, cancel all subscriptions and asynchronous tasks in %s.%s, the componentWillUnmount method
+
+en cours de recherche 
+*/
+
+      constructAPIdata= () => {
+      
+        this.catchAPIdata();
+       
+       /**  
+        * 
+        * test appel du first.box
+        *         
+        var first= this.state.dataCaught[0];
+ 
+        return (
+          <MapView.Marker key={1} 
+          coordinate={{latitude: 50.665791,
+        longitude: 4.612230,}}
+          title={"Hello"}
+          description={"RACHID"}
+          image={markerImg}
+          >
+
+              <MapView.Callout tooltip style={styles.customView}>
+                <View style={styles.calloutText}>
+                  <Text>{first.box}{"\n"}{"RACHID"}</Text>
+                </View>
+              </MapView.Callout>
+          </MapView.Marker>
+        );
+        */
+
+       // <Text>{this.state.dataCaught.map((dat, id) => <Text key={id} >{dat.altitude[0]}</Text>)}{"\n"}{"RACHID"}</Text>
+      
+       for (let index = 0; index < this.state.dataLength; index++) {
+            
+        const element = this.state.dataCaught[index];
+        
+  
+          return (
+            
+            <MapView.Marker key={index} 
+            coordinate={{latitude: Number.parseFloat(element.latitude) , longitude: Number.parseFloat(element.longitude)}}
+            title={"AirBox N°"+ (index+1)}
+            description={element.box}
+            image={markerImg}
+            >
+                <MapView.Callout tooltip style={styles.customView}>
+                  <View style={styles.calloutText}>
+                    <Text>{"AirBox N°"+ (index+1)}{"\n"}{Number.parseFloat(element.latitude)}{"\n"}{Number.parseFloat(element.longitude)}</Text>
+                  </View>
+                </MapView.Callout>
+            </MapView.Marker>
+          );
+        }
+      } 
+
+
+
+
+  
+
   render() {
 
-    /*
-         
-    state = {
-      markers: [
-        {
-          coordinate: {
-            latitude: 50.665791,
-            longitude: 4.612230,
-          },
-          title: "EPHEC",
-          description: "SCHOOL",
-        },
-      ],
-      region: {
-        latitude: 50.665791,
-        longitude: 4.612230,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
-      },
-    };
-
-     <MapView.Marker
-            coordinate={this.state.marker1.latidude, this.state.marker1.longitude}
-            title={this.state.marker1.title}
-            description={this.state.marker1.description}
-            image={markerImg}
-         />
-
-
-         <MapView.Marker
-            coordinate={this.state.marker2.coordinate}
-            title={this.state.marker2.title}
-            description={this.state.marker2.description}
-            image={markerImg}
-         />
-      */
 
     return (
-      
-        <View style={styles.container}>
+      <View style={styles.container}>
           <MapView style={styles.map}
             initialRegion={{
               latitude: this.state.region.latitude,
@@ -123,65 +158,17 @@ export default class App extends React.Component {
             }}
             zoomEnabled={true}
             style={styles.mapStyle}
-
-
-
-            data={this.state.dataSource}
-            renderItem={({item}) => 
-            <Text>
-            
-            {item.ID_AIR}, 
-            {item.TEMPERATURE},
-            {item.HUMIDITY},
-            {item.CO2},
-            {item.DATE}
-            
-            </Text>}
-            keyExtractor={({ID_AIR}, index) => ID_AIR}
-
-
           >
+
           
-          {this.state.marker1.map((marker, index) => {
-        return (
-          <MapView.Marker key={index} 
-          coordinate={marker.coordinate}
-          title={this.state.marker1.title}
-          description={this.state.marker1.description}
-          image={markerImg}
-          >
-            <MapView.Callout tooltip style={styles.customView}>
-                <View style={styles.calloutText}>
-                  <Text>{marker.title}{"\n"}{marker.description}</Text>
-                </View>
-            </MapView.Callout>
-
-          </MapView.Marker>
-        );
-      })}
-
-          {this.state.marker2.map((marker, index) => {
-        return (
-          <MapView.Marker key={index} 
-          coordinate={marker.coordinate}
-          title={this.state.marker2.title}
-          description={this.state.marker2.description}
-          image={markerImg}
-          >
-            <MapView.Callout tooltip style={styles.customView}>
-                <View style={styles.calloutText}>
-                  <Text>{marker.title}{"\n"}{marker.description}</Text>
-                </View>
-            </MapView.Callout>
-          </MapView.Marker>
-        );
-      })}
+          {this.constructAPIdata()}
+         
         </MapView>
   </View>
-      
-    );
+      );
   }
 }
+
 
 
 
