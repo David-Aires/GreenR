@@ -4,14 +4,14 @@ const {Builder, By, Key, util} = require('selenium-webdriver');
 
 async function interface_test() {
     try {
-        let value="particulier";
+        let value="autre";
         var driver = await new Builder().forBrowser("chrome").build();
 
         // vérifie que le formulaire a bien été complété
         function check_title(){
             var promise= driver.getTitle().then(function(title){
                 if(title === "Formspree") {
-                    console.log('success');
+                    console.log('Test success');
                     return true;
                 } else {
                     console.log('fail --' + title);
@@ -22,11 +22,64 @@ async function interface_test() {
 
         // Remplis le formulaire avec des données et le submit
         await driver.get("https://green-r.be/include/commande.php");
-        await driver.findElement(By.name("nom")).sendKeys("David Aires");
+        await driver.findElement(By.name("name")).sendKeys("David Aires");
         await driver.findElement(By.name("adresse")).sendKeys("Rue De Verdun 467, 1130 BXL");
         await driver.findElement(By.name("email")).sendKeys("david.airespimentel@gmail.com");
         await driver.findElement(By.name("tel")).sendKeys("0497439582");
         await driver.findElement(By.css("input[value='"+value+"']")).click();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .3333333
         if(value=="autre"){
             await driver.findElement(By.name("autre")).sendKeys("web developer")
         }
@@ -77,7 +130,10 @@ async function interface_test() {
 
         // Lance le test de validation du formulaire
         driver.wait(check_title,1000);
-    } finally {
+    } catch(error) {
+        console.log(error + '\n Test Failed!');
+    }
+    finally {
         //await driver.quit();
       }
 }

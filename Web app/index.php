@@ -10,7 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Green-R</title>
+<!--
 
+ART FACTORY
+
+https://templatemo.com/tm-537-art-factory
+
+-->
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
@@ -25,14 +31,13 @@
     <body>
     
     <!-- ***** Preloader Start ***** -->
-   <div id="preloader">
+    <div id="preloader">
         <div class="jumper">
-            <img src="assets/images/logo_3.png" width="100%">
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div>  
     <!-- ***** Preloader End ***** -->
     
     
@@ -43,7 +48,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="#welcome" class="logo">Green-R</a>
+                        <a href="#" class="logo">Green-R</a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
@@ -51,15 +56,18 @@
                             <li class="scroll-to-section"><a href="#about">Notre projet</a></li>
                             <li class="scroll-to-section"><a href="#about2">Mesures</a></li>
                             <li class="scroll-to-section"><a href="#services">L'équipe</a></li>
-                            <li class="submenu">
+                            <li class="scroll-to-section"><a href="#frequently-question">Questions</a></li>
+                            <!--<li class="submenu">
                                 <a href="javascript:;">Boîtier</a>
                                 <ul>
-                                    <li><a href="/include/commande.php">Commander</a></li>
-                                    <li><a href="/include/assistance.php">Assistance</a></li>
+                                    <li><a href="">Commander</a></li>
+                                    <li><a href="">Installation</a></li>
+                                    <li><a href="">FAQ's</a></li>
+                                    <li><a href="">Blog</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             <li class="scroll-to-section"><a href="#contact-us">Nous contacter</a></li>
-                            <li class="scroll-to-section"><a href="app/html/tracking.php" style="color: black"><i class="fa fa-database" style="color: black"></i> Données</a></li>
+                            <li class="scroll-to-section"><a href="app/html/index.html" style="color: black"><i class="fa fa-database" style="color: black"></i> Données</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -81,7 +89,7 @@
             <div class="container">
                 <div class="row">
                     <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        <h1 id="enTete"><strong>Green-r</strong> pour un monde plus <strong>vert</strong> !</h1>
+                        <h1><u>Green-r</u> pour un monde plus <strong style="color: yellowgreen">vert</strong> !</h1>
                         <p>Grâce à la technologie, nous voulons améliorer le bien-être de tous, y compris la planète.</p>
                         <a href="#about" class="main-button-slider">Découvrir notre projet</a>
                     </div>
@@ -122,7 +130,7 @@
                     </div>
                 </div>
             <p>
-            Nous le savons tous, la pollution est croissante et la qualité de notre air se détériore, pouvant être nocif pour les enfants et notre propre santé.
+            Nous le savons tou, la pollution est croissante et la qualité de notre air se détériore, pouvant être nocif pour les enfants et notre propre santé.
                 Grace à Green-R nous espérons pouvoir permettre à des petites entités de récolter de réelles données. Ainsi si la quantité de CO2 s’avère être dangereuse, des solutions appropriées pourront être apportées et permettront alors à travers celle-ci de rendre un air plus <strong style="color: green">"Green"</strong>.
             </p>
             <a href="#about2" class="main-button">Découvrez-en plus</a>
@@ -155,7 +163,7 @@
                         <li>
                             <div class="text">
                                 <h6>Le Taux de CO2</h6>
-                                <p>Se mesure en ppm ( <i><a href="https://www.actu-environnement.com/ae/dictionnaire_environnement/definition/ppm.php4">actu-environnement.com</a>: Nombre de molécules du gaz à effet de serre considéré par million de molécules d’air</i> ).</p>
+                                <p>Se mesure en ppm ( <i><a href="https://www.actu-environnement.com/ae/dictionnaire_environnement/definition/ppm.php4">actu-environnement.com</a> : Nombre de molécules du gaz à effet de serre considéré par million de molécules d’air</i> ).</p>
                             </div>
                         </li>
                         <li>
@@ -261,9 +269,9 @@
                     <div class="accordion-text">
                         <p>Le procédé est très simple. Cliquez sur le bouton ci-dessous et vous accéderez à un formulaire où vous pourrez y indiquer diverses informtions à propos de vos désires concernant le boîtier.</p>
                         <p>Une fois le boîtier reçu, il vous suffira de le brancher à une prise secteur et de le placer dans une zone où il peut capter votre WiFi.</p>
-                        <p>Vos mesures seront directement affichable sur notre site dans la section <a href="app/html/tracking.php">données</a>.</p>
+                        <p>Vos mesures seront directement affichable sur notre site dans la section <a href="app/html/index.html">données</a>.</p>
                         <!--<span>Email: <a href="#">email@company.com</a><br></span>-->
-                        <a href="/include/commande.php" class="main-button">Commander</a>
+                        <a href="#contact-us" class="main-button">Commander</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -401,7 +409,7 @@
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <button type="submit" id="form-submit" class="main-button">Envoyer</button>
+                                <button type="submit" id="form-submit" class="main-button">Send It</button>
                               </fieldset>
                             </div>
                           </div>
@@ -431,6 +439,9 @@
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
     <script src="assets/js/owl-carousel.js"></script>
