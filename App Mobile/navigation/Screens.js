@@ -148,6 +148,14 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
+    Favoris: {
+      screen: Favoris,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Favoris" title="Favoris" />
+        )
+      })
+    },
     A_Propos: {
       screen: A_Propos,
       navigationOptions: navOpt => ({
