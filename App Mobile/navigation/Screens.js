@@ -115,7 +115,7 @@ const HomeStack = createStackNavigator(
     transitionConfig
   }
 );
-// divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
+
 const AppStack = createDrawerNavigator(
   {
     Onboarding: {
