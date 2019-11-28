@@ -1,91 +1,55 @@
 import React from "react";
 import {
+  Image,
+  TouchableOpacity,
   StyleSheet,
   ImageBackground,
   Dimensions,
   StatusBar,
   KeyboardAvoidingView,
   View,
-  FlatList
+  FlatList,
+  Linking,
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
+import { ScrollView } from "react-native-gesture-handler";
 
 const { width, height } = Dimensions.get("screen");
 
 class A_Propos extends React.Component {
   render() {
     return (
-      <Block flex middle>
+      <Block flex middle backgroundColor='#574AA6'>
         <StatusBar hidden />
-        <ImageBackground
-          source={Images.A_ProposBackground}
-          style={{ width, height, zIndex: 1 }}
-        >
           <Block flex middle>
             <Block style={styles.A_ProposContainer}>
-              <Block flex={0.25} middle style={styles.socialConnect}>
-                <Text color="#8898AA" size={12}>
-                  Sign up with
-                </Text>
-                <Block row style={{ marginTop: theme.SIZES.BASE }}>
-                  <Button style={{ ...styles.socialButtons, marginRight: 30 }}>
-                    <Block row>
-                      <Icon
-                        name="logo-github"
-                        family="Ionicon"
-                        size={14}
-                        color={"black"}
-                        style={{ marginTop: 2, marginRight: 5 }}
-                      />
-                      <Text style={styles.socialTextButtons}>GITHUB</Text>
-                    </Block>
-                  </Button>
-                  <Button style={styles.socialButtons}>
-                    <Block row>
-                      <Icon
-                        name="logo-google"
-                        family="Ionicon"
-                        size={14}
-                        color={"black"}
-                        style={{ marginTop: 2, marginRight: 5 }}
-                      />
-                      <Text style={styles.socialTextButtons}>GOOGLE</Text>
-                    </Block>
-                  </Button>
-                </Block>
-              </Block>
               <Block flex>
-                <Block flex={0.17} middle>
-                  <Text color="#8898AA" size={12}>
-                    Or sign up the classic way
-                  </Text>
-                </Block>
                 <Block flex center>
                   <KeyboardAvoidingView
                     style={{ flex: 1 }}
                     behavior="padding"
                     enabled
-                  >
-
-                      <Block>
+                  ><ScrollView>
+                        <Block>
+                          <View>
+                          <Text center style={styles.titre}>GREEN-R</Text> 
+                          </View>
+                        </Block>
+                       <Block paddingLeft>
                         <Text padding={30}>
-                          <Text color="#9acd32" center>Green-R</Text> 
+                          <Text color="#B4CC04" >Green-R </Text> 
                           est un projet lancé par des étudiants, 
-                          il a pour but de <Text color="#9acd32">résoudre une problématique croissante et réelle</Text> 
+                          il a pour but de <Text color="#B4CC04">résoudre une problématique croissante et réelle</Text> 
                           que nous rencontrons au quotidien. 
-                          Nous voulons donner un accès à des données sur <Text color="#9acd32">la qualité de l’air</Text> sur différentes entités 
-                          <Text color="#9acd32">(école, commune, centre sportif, …)</Text> à l'aide de notre produit, 
+                          Nous voulons donner un accès à des données sur <Text color="#B4CC04">la qualité de l’air</Text> sur différentes entités 
+                          <Text color="#B4CC04">(école, commune, centre sportif, …)</Text> à l'aide de notre produit, 
                           pouvant ainsi permettre une analyse de la qualité de l’air. Avec ces informations, 
                           des décisions pourront être prises si la qualité de l’air se révèle être mauvaise :
-                          
                         </Text>
-
-
-                        
-                        <View style={styles.container} padding={20}  >
+                        <View style={styles.container}>
                               <FlatList
                                 data={[
                                   {key: '                                    '},
@@ -93,11 +57,174 @@ class A_Propos extends React.Component {
                                   {key: 'Plantation d’arbres'},
                                   {key: 'Aménagement des voiries'},
                                   {key: 'Cas extrême : fermeture des voiries'},
+                                  {key: '                                   '},
                                 ]}
-                                renderItem={({item}) => <Text style={styles.item} color={"black"}     >{item.key}</Text>}
+                                renderItem={({item}) => 
+                                  <Text style={styles.item} color={"black"}     >{item.key}</Text>}                      
                               />
                         </View>
                     </Block>
+                    <Block>
+                          <View>
+                          <Text style={styles.titre}>L'équipe</Text> 
+                          </View>
+                        </Block>
+                       <Block></Block>
+                      <Block>
+                      <View style={styles.imageContainer}>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL('https://www.linkedin.com/in/david-aires/')}
+                            style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/david.png')}
+                            style={styles.image}/>
+                        </TouchableOpacity>
+                      </View>
+                      <View>
+                          <Text style={styles.textImage}>Aires David</Text>
+                          <Text style={{textAlign: 'center'}}>Infrastructure réseau et développement Web</Text>
+                      </View>
+                      
+                      <View style={{flexDirection: 'row'}}>
+                        <TouchableOpacity
+                          onPress={() => Linking.openURL('https://github.com/David-Aires')}
+                          style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/githubicon.png')}
+                            style={styles.icon}/>
+                        </TouchableOpacity>
+                      </View>
+                    </Block>
+
+                    <Block>
+                    <View style={styles.imageContainer}>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL('https://www.linkedin.com/in/renaud-allard-824537195/')}
+                            style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/renaud.png')}
+                            style={styles.image}/>
+                        </TouchableOpacity>
+                      </View>
+                      <View>
+                          <Text style={styles.textImage}>Allard Renaud</Text>
+                          <Text style={{textAlign: 'center'}}>Application Mobile</Text>
+                      </View>
+                      
+                      <View style={{flexDirection: 'row'}}>
+                        <TouchableOpacity
+                          onPress={() => Linking.openURL('https://github.com/rebald')}
+                          style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/githubicon.png')}
+                            style={styles.icon}/>
+                        </TouchableOpacity>
+                      </View>
+                    </Block>
+
+                    <Block>
+                    <View style={styles.imageContainer}>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL('https://www.linkedin.com/in/souha%C3%AFb-azzouz-a92b67198/')}
+                            style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/souhaib.png')}
+                            style={styles.image}/>
+                        </TouchableOpacity>
+                      </View>
+                      <View>
+                          <Text style={styles.textImage}>Azzouz Souhaïb</Text>
+                          <Text style={{textAlign: 'center'}}>Designer et communication</Text>
+                      </View>
+                      
+                      <View style={{flexDirection: 'row'}}>
+                        <TouchableOpacity
+                          onPress={() => Linking.openURL('https://github.com/souhaibazzouz')}
+                          style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/githubicon.png')}
+                            style={styles.icon}/>
+                        </TouchableOpacity>
+                      </View>
+                    </Block>
+
+                    <Block>
+                    <View style={styles.imageContainer}>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL('https://google.com')}
+                            style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/quentin.png')}
+                            style={styles.image}/>
+                        </TouchableOpacity>
+                      </View>
+                      <View>
+                          <Text style={styles.textImage}>Lebrun Quentin</Text>
+                          <Text style={{textAlign: 'center'}}>Application Mobile</Text>
+                      </View>
+                      
+                      <View style={{flexDirection: 'row'}}>
+                        <TouchableOpacity
+                          onPress={() => Linking.openURL('https://github.com/Quentin-Lebrun')}
+                          style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/githubicon.png')}
+                            style={styles.icon}/>
+                        </TouchableOpacity>
+                      </View>
+                    </Block>
+
+                    <Block>
+                    <View style={styles.imageContainer}>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL('https://google.com')}
+                            style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/cyril.png')}
+                            style={styles.image}/>
+                        </TouchableOpacity>
+                      </View>
+                      <View>
+                          <Text style={styles.textImage}>Tongres Cyril</Text>
+                          <Text style={{textAlign: 'center'}}>Développement électronique et communication</Text>
+                      </View>
+                      
+                      <View style={{flexDirection: 'row'}}>
+                        <TouchableOpacity
+                          onPress={() => Linking.openURL('https://github.com/Cyrton')}
+                          style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/githubicon.png')}
+                            style={styles.icon}/>
+                        </TouchableOpacity>
+                      </View>
+                    </Block>
+                    <Block>
+                    <View style={styles.imageContainer}>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL('https://www.linkedin.com/in/guillaume-vanden-herrewegen-403578190/')}
+                            style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/guillaume.png')}
+                            style={styles.image}/>
+                        </TouchableOpacity>
+                      </View>
+                      <View>
+                          <Text style={styles.textImage}>Vanden Herrewegen Guillaume</Text>
+                          <Text style={{textAlign: 'center'}}>Développement électronique et développement Web</Text>
+                      </View>
+                      
+                      <View style={{flexDirection: 'row'}}>
+                        <TouchableOpacity
+                          onPress={() => Linking.openURL('https://github.com/guivdh')}
+                          style={{padding: 5}}>
+                          <Image
+                            source={require('../assets/image/githubicon.png')}
+                            style={styles.icon}/>
+                        </TouchableOpacity>
+                      </View>
+                    </Block>
+                    </ScrollView>
                     <Block row width={width * 0.75}>
                       <Checkbox
                         checkboxStyle={{
@@ -117,19 +244,11 @@ class A_Propos extends React.Component {
                         Privacy Policy
                       </Button>
                     </Block>
-                    <Block middle>
-                      <Button color="primary" style={styles.createButton}>
-                        <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREATE ACCOUNT
-                        </Text>
-                      </Button>
-                    </Block>
                   </KeyboardAvoidingView>
                 </Block>
               </Block>
             </Block>
           </Block>
-        </ImageBackground>
       </Block>
     );
   }
@@ -150,6 +269,30 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     elevation: 1,
     overflow: "hidden"
+  },
+  image: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: '#3A4750'
+  },
+  imageContainer: {
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingVertical: 5
+  },
+ 
+  textImage: {
+    textAlign: 'center',
+    paddingVertical: 5,
+    color: '#3A4750',
+    fontWeight: 'bold'
+  },
+  titre: {
+    color: '#18391e',
+    fontWeight: 'bold',
+    fontSize: 25
   },
   socialConnect: {
     backgroundColor: argonTheme.COLORS.WHITE,
@@ -174,8 +317,9 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     fontSize: 14
   },
-  inputIcons: {
-    marginRight: 12
+  icon: {
+    width: 30,
+    height: 30
   },
   passwordCheck: {
     paddingLeft: 15,
