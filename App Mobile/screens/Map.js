@@ -90,38 +90,12 @@ en cours de recherche
       
         this.catchAPIdata();
        
-       /**  
-        * 
-        * test appel du first.box
-        *         
-        var first= this.state.dataCaught[0];
- 
-        return (
-          <MapView.Marker key={1} 
-          coordinate={{latitude: 50.665791,
-        longitude: 4.612230,}}
-          title={"Hello"}
-          description={"RACHID"}
-          image={markerImg}
-          >
-
-              <MapView.Callout tooltip style={styles.customView}>
-                <View style={styles.calloutText}>
-                  <Text>{first.box}{"\n"}{"RACHID"}</Text>
-                </View>
-              </MapView.Callout>
-          </MapView.Marker>
-        );
-        */
-
-       // <Text>{this.state.dataCaught.map((dat, id) => <Text key={id} >{dat.altitude[0]}</Text>)}{"\n"}{"RACHID"}</Text>
-      
-       for (let index = 0; index < this.state.dataLength; index++) {
-            
-        const element = this.state.dataCaught[index];
-        
+      var marker=[];
+       for (let index = 0; index < this.state.dataCaught.length; index++) {
+        console.log(index);
+        var element = this.state.dataCaught[index];
   
-          return (
+          marker.push(
             
             <MapView.Marker key={index} 
             coordinate={{latitude: Number.parseFloat(element.latitude) , longitude: Number.parseFloat(element.longitude)}}
@@ -131,17 +105,23 @@ en cours de recherche
             >
                 <MapView.Callout tooltip style={styles.customView}>
                   <View style={styles.calloutText}>
-                    <Text>{"AirBox N°"+ (index+1)}{"\n"}{Number.parseFloat(element.latitude)}{"\n"}{Number.parseFloat(element.longitude)}</Text>
+                    
+                  <Text>{"AirBox N°"+ (index+1)}{"\n"}{Number.parseFloat(element.latitude)}{"\n"}{Number.parseFloat(element.longitude)}
+                  {"\n"}{element.altitude}</Text>
+
                   </View>
                 </MapView.Callout>
             </MapView.Marker>
+
+            
           );
         }
+        return (
+          <>
+            {marker}
+          </>
+        );
       } 
-
-
-
-
   
 
   render() {
