@@ -39,8 +39,13 @@ Sur notre [site](https://green-r.be/include/assistance.php) vous pouvez trouver:
 
 Le projet a été réalisé en appliquant la méthode Scrum.
 Les rapports à la fin de chaque sprint sont disponibles [ici](https://github.com/David-Aires/GreenR/tree/master/Rapport)
-Différentes informations sont disponibles sur le [wiki](https://github.com/David-Aires/GreenR/wiki) du projet.  
+Différentes informations sont disponibles sur le [wiki](https://github.com/David-Aires/GreenR/wiki) du projet. 
+
+Après de nombreuses tentatives, le boitier ressemble à celui-ci (voir photo ci-dessous). 
+
+![Box Green-R](https://github.com/David-Aires/GreenR/blob/master/%C3%89lectronique/Mod%C3%A9lisation%20Capteur.png)
  
+*Il se pourrait que le boitier évolue grâce aux améliorations qu'on risquerait d'apporter*
 ## Contributeurs  
 Aires David, Allard Renaud, Azzouz Souhaib, Lebrun Quentin, Tongres Cyril, Vanden Herrewegen Guillaume.  
   
