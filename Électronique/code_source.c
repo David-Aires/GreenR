@@ -15,8 +15,8 @@
 
 /*Connection au WiFi*/
 WiFiClient client;
-char ssid[] = "VOO-870814";
-char password[] = "ARXJQJSY";
+char ssid[] = "*****************";
+char password[] = "*****************";
 byte mac[6];
 
 MySQL_Connection conn((Client *)&client);
@@ -99,8 +99,8 @@ int strB2;
 
 
 IPAddress server_addr(51, 91, 120, 112); // MySQL server IP   51.91.120.112
-char db_user[] = "admin"; //MySql user
-char db_password[] = "KV-3oPn}CWx!"; // MySQL password
+char db_user[] = "*****************"; //MySql user
+char db_password[] = "*****************"; // MySQL password
 
 void setup(){
 
