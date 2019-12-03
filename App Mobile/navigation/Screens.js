@@ -108,6 +108,7 @@ const HomeStack = createStackNavigator(
       screen: Map,
       navigationOptions: ({ navigation }) => ({
         header: (
+          
           <View>
             <Button title="Go back"
           onPress={() => navigation.navigate("Home")}
