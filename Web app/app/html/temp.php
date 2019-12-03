@@ -25,6 +25,8 @@
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
 
     <script src="../js/export.js"></script>
     <script src="../js/thermometer.min.js"></script>
@@ -241,7 +243,7 @@ else
                                             <h6 class="dropdown-header">Exporter</h6>
                                             <div class="dropdown-divider"></div>
                                             <a  class="dropdown-item export_pdf2">PDF</a>
-                                            <a class="dropdown-item">XLS</a>
+                                            <a class="dropdown-item export_xls">XLS</a>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +268,7 @@ else
                                             <h6 class="dropdown-header">Exporter</h6>
                                             <div class="dropdown-divider"></div>
                                             <a  class="dropdown-item export_pdf">PDF</a>
-                                            <a class="dropdown-item">XLS</a>
+                                            <a class="dropdown-item export_xls">XLS</a>
                                         </div>
                                     </div>
                                 </div>

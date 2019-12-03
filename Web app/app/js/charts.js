@@ -31,6 +31,7 @@ function change_value_charts(from,to){
     ajaxGet("https://green-r.be/api/stats.php?box="+box+"&table=AIR_STAT&mesure="+mesure+"&from="+from+"&to="+to, function (reponse) {
         var req = JSON.parse(reponse);
         data_flux=[];
+        data_time=[];
         chartInstance.data.datasets[0].data=[];
 
         chartInstance.data.labels=[];
@@ -38,6 +39,8 @@ function change_value_charts(from,to){
         chartInstance2.data.labels=[];
         chartInstance2.data.datasets[0].data=[];
         for(let pas=0;pas<req.length;pas++) {
+            data_flux.push(req[pas][mesure]);
+            data_time.push(req[pas].DATE);
             chartInstance.data.labels.push("");
             chartInstance.data.datasets[0].data.push(req[pas][mesure]);
 
