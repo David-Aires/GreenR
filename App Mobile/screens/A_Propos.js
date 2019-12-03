@@ -3,7 +3,6 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
-  ImageBackground,
   Dimensions,
   StatusBar,
   KeyboardAvoidingView,
@@ -19,7 +18,20 @@ import { ScrollView } from "react-native-gesture-handler";
 
 const { width, height } = Dimensions.get("screen");
 
+
 class A_Propos extends React.Component {
+
+  renderItem = ({item}) => {
+      return (
+        <Block row>
+            <Image
+              source={require('../assets/airbox_icon.png')}
+              style={styles.iconList}/>
+              <Text center>{item.key}</Text>
+        </Block>
+      )
+  }
+
   render() {
     return (
       <Block flex middle backgroundColor='#574AA6'>
@@ -38,33 +50,53 @@ class A_Propos extends React.Component {
                           <Text center style={styles.titre}>GREEN-R</Text> 
                           </View>
                         </Block>
-                       <Block paddingLeft>
+                       <Block paddingLeft marginTop={20}>
                         <Text padding={30}>
-                          <Text color="#B4CC04" >Green-R </Text> 
+                          <Text style={styles.textboldgreen} >Green-R </Text> 
                           est un projet lancé par des étudiants, 
-                          il a pour but de <Text color="#B4CC04">résoudre une problématique croissante et réelle</Text> 
+                          il a pour but de <Text style={styles.textboldgreen}>résoudre une problématique croissante et réelle</Text> 
                           que nous rencontrons au quotidien. 
-                          Nous voulons donner un accès à des données sur <Text color="#B4CC04">la qualité de l’air</Text> sur différentes entités 
-                          <Text color="#B4CC04">(école, commune, centre sportif, …)</Text> à l'aide de notre produit, 
+                          Nous voulons donner un accès à des données sur <Text style={styles.textboldgreen}>la qualité de l’air</Text> sur différentes entités 
+                          <Text style={styles.textboldgreen}>(école, commune, centre sportif, …)</Text> à l'aide de notre produit, 
                           pouvant ainsi permettre une analyse de la qualité de l’air. Avec ces informations, 
                           des décisions pourront être prises si la qualité de l’air se révèle être mauvaise :
                         </Text>
                         <View style={styles.container}>
-                              <FlatList
+                              <FlatList marginTop={10}
                                 data={[
-                                  {key: '                                    '},
                                   {key: 'Réduction de la vitesse des voitures'},
                                   {key: 'Plantation d’arbres'},
                                   {key: 'Aménagement des voiries'},
                                   {key: 'Cas extrême : fermeture des voiries'},
-                                  {key: '                                   '},
-                                ]}
-                                renderItem={({item}) => 
-                                  <Text style={styles.item} color={"black"}     >{item.key}</Text>}                      
+                                ]
+                              }
+                          
+                                renderItem={this.renderItem}
                               />
                         </View>
+                        <Block center marginTop={10}>
+                          <Button onPress={() => Linking.openURL("https://github.com/David-Aires/GreenR")} style={{ ...styles.socialButtons, marginRight: 30 }}>
+                            <Block row>
+                              <Icon
+                                name="logo-github"
+                                family="Ionicon"
+                                size={14}
+                                color={"black"}
+                                style={{ marginTop: 2, marginRight: 5 }}
+                              />
+                              <Text style={styles.socialTextButtons}>GITHUB</Text>
+                            </Block>
+                          </Button>
+                        </Block>
                     </Block>
-                    <Block>
+                    <Block marginTop={10}>
+                          <View>
+                          <Text padding={30}>Pour plus d'informations, vous pouvez consultez 
+                                <Text style={styles.socialTextButtons} onPress={() => Linking.openURL("https://green-r.be/")}> le site web</Text>.
+                          </Text> 
+                          </View>
+                        </Block>
+                    <Block marginTop={70}>
                           <View>
                           <Text style={styles.titre}>L'équipe</Text> 
                           </View>
@@ -234,6 +266,7 @@ class A_Propos extends React.Component {
                         label="I agree with the"
                       />
                       <Button
+                        onPress={() => Linking.openURL('https://github.com/souhaibazzouz')}
                         style={{ width: 100 }}
                         color="transparent"
                         textStyle={{
@@ -282,7 +315,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingVertical: 5
   },
- 
   textImage: {
     textAlign: 'center',
     paddingVertical: 5,
@@ -315,11 +347,20 @@ const styles = StyleSheet.create({
   socialTextButtons: {
     color: argonTheme.COLORS.PRIMARY,
     fontWeight: "800",
-    fontSize: 14
+    fontSize: 14,
+    textDecorationLine: 'underline'
   },
   icon: {
     width: 30,
     height: 30
+  },
+  textboldgreen: {
+    color: '#B4CC04',
+    fontWeight: 'bold'
+  },
+  iconList: {
+    width: 10,
+    height: 10
   },
   passwordCheck: {
     paddingLeft: 15,
