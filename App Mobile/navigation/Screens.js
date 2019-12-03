@@ -1,5 +1,5 @@
 import React from "react";
-import { Easing, Animated } from "react-native";
+import { Easing, Animated,Button,View } from "react-native";
 import {
   createStackNavigator,
   createDrawerNavigator,
@@ -64,7 +64,13 @@ const MapStack = createStackNavigator({
   Map: {
     screen: Map,
     navigationOptions: ({ navigation }) => ({
-      header: <Header title="Map" navigation={navigation} />
+      header: <View>
+                    <Button
+                    title="Go back"
+                    onPress={() => navigation.navigate("Home")}                    
+                    />
+                  <Header title="Map" navigation={navigation}/> 
+              </View> 
     })
   }
 },{
@@ -102,7 +108,12 @@ const HomeStack = createStackNavigator(
       screen: Map,
       navigationOptions: ({ navigation }) => ({
         header: (
-          <Header left={<Block />} white transparent title="Map" navigation={navigation} />
+          <View>
+            <Button title="Go back"
+          onPress={() => navigation.navigate("Home")}
+          />
+          <Header left={<Block />} white transparent title="Map" navigation={navigation}/> 
+          </View>
         ),
         headerTransparent: true
       })
