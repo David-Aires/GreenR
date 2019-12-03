@@ -66,9 +66,10 @@
 <div class="boitier-image">
     <img src="images/boitier-greenr.png" id="boitier"><br>
     <button class="bouton3d" onclick="afficher3d()">Visualiser en 3d</button><br>
-
-   <div class="frame3d" style="display: none">
-        <iframe id="frame3d" frameborder="0" height="600" width="800" allowFullScreen="true" src="https://myproduct.visiativ.com:443/my/easysite/catalog3d/libraryitem?o=VkN0MmF6ZDJkVGhoVkRFMll5czFNSFpvWVZWc2N6bFZXbGhJZDA5VWVVSjVPVWxPU2s1RVlUQnFNbUoyZEVGTk9XNW1lV0ZuUFQwPQ==" UIcontrols="1"></iframe>
+    <div class="container">
+       <div class="frame3d" style="display: none">
+            <iframe id="frame3d" frameborder="0" height="600px" width="80%" allowFullScreen="true" src="https://myproduct.visiativ.com:443/my/easysite/catalog3d/libraryitem?o=VkN0MmF6ZDJkVGhoVkRFMll5czFNSFpvWVZWc2N6bFZXbGhJZDA5VWVVSjVPVWxPU2s1RVlUQnFNbUoyZEVGTk9XNW1lV0ZuUFQwPQ==" UIcontrols="1"></iframe>
+        </div>
     </div>
 </div>
 
