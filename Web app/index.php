@@ -10,13 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Green-R</title>
-<!--
 
-ART FACTORY
-
-https://templatemo.com/tm-537-art-factory
-
--->
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
@@ -31,13 +25,14 @@ https://templatemo.com/tm-537-art-factory
     <body>
     
     <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
+   <div id="preloader">
         <div class="jumper">
+            <img src="assets/images/logo_3.png" width="100%">
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>  
+    </div>
     <!-- ***** Preloader End ***** -->
     
     
@@ -48,7 +43,7 @@ https://templatemo.com/tm-537-art-factory
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="#" class="logo">Green-R</a>
+                        <a href="#welcome" class="logo">Green-R</a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
@@ -56,18 +51,15 @@ https://templatemo.com/tm-537-art-factory
                             <li class="scroll-to-section"><a href="#about">Notre projet</a></li>
                             <li class="scroll-to-section"><a href="#about2">Mesures</a></li>
                             <li class="scroll-to-section"><a href="#services">L'équipe</a></li>
-                            <li class="scroll-to-section"><a href="#frequently-question">Questions</a></li>
-                            <!--<li class="submenu">
+                            <li class="submenu">
                                 <a href="javascript:;">Boîtier</a>
                                 <ul>
-                                    <li><a href="">Commander</a></li>
-                                    <li><a href="">Installation</a></li>
-                                    <li><a href="">FAQ's</a></li>
-                                    <li><a href="">Blog</a></li>
+                                    <li><a href="/include/commande.php">Commander</a></li>
+                                    <li><a href="/include/assistance.php">Assistance</a></li>
                                 </ul>
-                            </li>-->
+                            </li>
                             <li class="scroll-to-section"><a href="#contact-us">Nous contacter</a></li>
-                            <li class="scroll-to-section"><a href="app/html/index.html" style="color: black"><i class="fa fa-database" style="color: black"></i> Données</a></li>
+                            <li class="scroll-to-section"><a href="https://green-r.be/app/html/tracking.php" style="color: black"><i class="fa fa-database" style="color: black"></i> Données</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -89,7 +81,7 @@ https://templatemo.com/tm-537-art-factory
             <div class="container">
                 <div class="row">
                     <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        <h1><u>Green-r</u> pour un monde plus <strong style="color: yellowgreen">vert</strong> !</h1>
+                        <h1 id="enTete"><strong>Green-r</strong> pour un monde plus <strong>vert</strong> !</h1>
                         <p>Grâce à la technologie, nous voulons améliorer le bien-être de tous, y compris la planète.</p>
                         <a href="#about" class="main-button-slider">Découvrir notre projet</a>
                     </div>
@@ -130,7 +122,7 @@ https://templatemo.com/tm-537-art-factory
                     </div>
                 </div>
             <p>
-            Nous le savons tou, la pollution est croissante et la qualité de notre air se détériore, pouvant être nocif pour les enfants et notre propre santé.
+            Nous le savons tous, la pollution est croissante et la qualité de notre air se détériore, pouvant être nocif pour les enfants et notre propre santé.
                 Grace à Green-R nous espérons pouvoir permettre à des petites entités de récolter de réelles données. Ainsi si la quantité de CO2 s’avère être dangereuse, des solutions appropriées pourront être apportées et permettront alors à travers celle-ci de rendre un air plus <strong style="color: green">"Green"</strong>.
             </p>
             <a href="#about2" class="main-button">Découvrez-en plus</a>
@@ -163,7 +155,7 @@ https://templatemo.com/tm-537-art-factory
                         <li>
                             <div class="text">
                                 <h6>Le Taux de CO2</h6>
-                                <p>Se mesure en ppm ( <i><a href="https://www.actu-environnement.com/ae/dictionnaire_environnement/definition/ppm.php4">actu-environnement.com</a> : Nombre de molécules du gaz à effet de serre considéré par million de molécules d’air</i> ).</p>
+                                <p>Se mesure en ppm ( <i><a href="https://www.actu-environnement.com/ae/dictionnaire_environnement/definition/ppm.php4">actu-environnement.com</a>: Nombre de molécules du gaz à effet de serre considéré par million de molécules d’air</i> ).</p>
                             </div>
                         </li>
                         <li>
@@ -201,7 +193,7 @@ https://templatemo.com/tm-537-art-factory
                         </div>
                         <h5 class="service-title">Guillaume Vanden Herrewegen</h5>
                         <p>Développement électronique et développement Web.</p>
-                        <img id="linkedin" src="assets/images/linkedin.png" style="width: 20%">
+                        <a href="https://www.linkedin.com/in/guillaume-vanden-herrewegen-403578190/" target="_blank"><img id="linkedin" src="assets/images/linkedin.png" style="width: 20%"></a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
@@ -209,7 +201,7 @@ https://templatemo.com/tm-537-art-factory
                         </div>
                         <h5 class="service-title">David Aires</h5>
                         <p>Infrastructure réseau et développement Web.</p><br>
-                        <img id="linkedin" src="assets/images/linkedin.png" style="width: 20%">
+                        <a href="https://www.linkedin.com/in/david-aires" target="_blank"><img id="linkedin" src="assets/images/linkedin.png" style="width: 20%"></a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
@@ -217,7 +209,7 @@ https://templatemo.com/tm-537-art-factory
                         </div>
                         <h5 class="service-title">Renaud Allard</h5>
                         <p>Application Mobile.</p><br>
-                        <img id="linkedin" src="assets/images/linkedin.png" style="width: 20%">
+                        <a href="https://www.linkedin.com/in/renaud-allard-824537195" target="_blank"><img id="linkedin" src="assets/images/linkedin.png" style="width: 20%"></a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
@@ -269,9 +261,9 @@ https://templatemo.com/tm-537-art-factory
                     <div class="accordion-text">
                         <p>Le procédé est très simple. Cliquez sur le bouton ci-dessous et vous accéderez à un formulaire où vous pourrez y indiquer diverses informtions à propos de vos désires concernant le boîtier.</p>
                         <p>Une fois le boîtier reçu, il vous suffira de le brancher à une prise secteur et de le placer dans une zone où il peut capter votre WiFi.</p>
-                        <p>Vos mesures seront directement affichable sur notre site dans la section <a href="app/html/index.html">données</a>.</p>
+                        <p>Vos mesures seront directement affichable sur notre site dans la section <a href="app/html/tracking.php">données</a>.</p>
                         <!--<span>Email: <a href="#">email@company.com</a><br></span>-->
-                        <a href="#contact-us" class="main-button">Commander</a>
+                        <a href="/include/commande.php" class="main-button">Commander</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -287,6 +279,32 @@ https://templatemo.com/tm-537-art-factory
                                 <div class="content">
                                     <p>Nous venons vous livrez notre boîtier. Il ne vous restera plus qu'à le brancher et à le placer dans une zone où il peut capter votre wifi.</p>
                                     <p>Nous vous demanderons au préalable les identifiants de votre WiFi pour que le boîtier soit juste un "plug and play".</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>En quoi notre projet est-il rse ?</span>
+                                <span class="icon">
+                                    <i class="icon fa fa-chevron-right"></i>
+                                </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>Notre projet répond à 3 ODD nous allons vous les citer et vous expliquez comment.<br>
+                                        <u>1.	Le 3ème ODD « Bonne santé et bien-être »</u><br>
+                                        En effet, notre projet permettra aux gens de s’informer sur la qualité de l’air près de chez eux via nos différents boîtiers en les renseignant sur le taux de CO2.
+                                        De ce fait, ça permettra aux citoyens de prendre des précautions si pic de pollution il y a, ou simplement de pouvoir sortir quand l’air est de bonne qualité et ainsi s’oxygéner un maximum en dehors du travail.<br>
+
+                                        <u>2.	Le 11ème ODD « Ville et communauté durable »</u><br>
+                                        Au-delà de renseigner les citoyens sur la qualité de l’air, notre projet pourra aussi permettre aux villes de se renseigner sur la pollution en installant notre boîtier chez eux.<br>
+
+                                        Les villes pourront alors voir via une installation de notre boîtier dans des endroits stratégiques (grande place, parc, centre sportif, …) si leur qualité de l’air est mauvaise ou non, et aménager ces endroits en conséquence si les résultats se montrent être mauvais.<br>
+
+                                        <u>3.	Le 15ème ODD « Vie terrestre »</u><br>
+                                        Au-delà d’aider les villes à réduire leur taux de CO2 dans l’air, améliorer la qualité de l’air permet à tout être vivant d’avoir des meilleures conditions de vie.
+                                        Notre projet pourra alors à long terme impacter tout l’écosystème se trouvant près de milieux aménager par les villes, pour leurs citoyens en premier lieux mais aussi la faune et la flore se trouvant tout autour.
+                                    </p>
                                 </div>
                             </div>
                         </article>
@@ -409,7 +427,7 @@ https://templatemo.com/tm-537-art-factory
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <button type="submit" id="form-submit" class="main-button">Send It</button>
+                                <button type="submit" id="form-submit" class="main-button">Envoyer</button>
                               </fieldset>
                             </div>
                           </div>
@@ -439,9 +457,6 @@ https://templatemo.com/tm-537-art-factory
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
-    <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
     <script src="assets/js/owl-carousel.js"></script>
