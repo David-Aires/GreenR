@@ -266,7 +266,7 @@ class A_Propos extends React.Component {
                         label="I agree with the"
                       />
                       <Button
-                        onPress={() => Linking.openURL('https://github.com/souhaibazzouz')}
+                        onPress={() => Linking.openURL('https://green-r.be/assets/Conditions-G%C3%A9n%C3%A9rales-d\'utilisation.pdf')}
                         style={{ width: 100 }}
                         color="transparent"
                         textStyle={{
