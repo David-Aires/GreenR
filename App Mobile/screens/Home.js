@@ -37,7 +37,6 @@ class Home extends React.Component {
       });
   }
 
-
   renderActu = () => {
     return (
       <ScrollView
@@ -45,15 +44,7 @@ class Home extends React.Component {
         contentContainerStyle={styles.articles}>
         <Block flex>
         
-        <FlatList
-          data={this.state.dataSource}
-         
-          renderItem={({item}) => <Text>{item.ID_AIR}, {item.TEMPERATURE},{item.HUMIDITY},{item.CO2},{item.DATE}</Text>}
-          // for location
-          // renderItem={({item}) => <Text>{item.SERIAL_NUM}, {item.ID_POS},{item.ID_AIR},{item.DATE}</Text>}
-          keyExtractor={({ID_AIR}, index) => ID_AIR}
-        />
-
+       
         <Card item={articles[1]} full />
         <Card item={articles[2]} full /> 
 
