@@ -91,7 +91,7 @@ class A_Propos extends React.Component {
                     </Block>
                     <Block marginTop={10}>
                           <View>
-                          <Text padding={30}>Pour plus d'informations, vous pouvez consultez 
+                          <Text padding={30}>Pour plus d'informations, vous pouvez consulter
                                 <Text style={styles.socialTextButtons} onPress={() => Linking.openURL("https://green-r.be/")}> le site web</Text>.
                           </Text> 
                           </View>
