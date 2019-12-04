@@ -70,32 +70,35 @@ catchAPIdata= () =>{
     
       this.catchAPIdata();
      
-    var marker=[];
+    var pick=[];
      for (let index = 0; index < this.state.dataCaught.length; index++) {
-      console.log(index);
-      var element = this.state.dataCaught[index];
+        console.log(index);
+        var element = this.state.dataCaught[index];
+
+        pick.push(
+          <Picker selectedValue = {this.state.user} onValueChange = {this.updateUser}>
+            <Picker.Item label = {index} value = {element.box} /> 
+          </Picker>
+        )
       }
-      return (
-        <></>
-      );
+
     } 
-  
-    renderFavori = () => {
-      return (
+
+  render(){
+    return(
+      <View>
               <View style={styles.container}>
                   <Text style={styles.valueText}>
-                      Sélectionner une boxe favorite
+                      Sélectionner une boxe favorite!
                   </Text>
                   <RadioGroup radioButtons={this.state.box} onPress={this.onPress} />
+                  {this.constructAPIdata()}
               </View>
-          
-      
-      )
-    }
-
+            <Text style = {styles.text}>{this.state.user}</Text>
+         </View>
+    );
   }
-
-
+}
 
     const styles = StyleSheet.create({
       container: {
@@ -108,3 +111,11 @@ catchAPIdata= () =>{
           marginBottom: 50,
       },
   });
+
+  const styles = StyleSheet.create({
+    text: {
+       fontSize: 30,
+       alignSelf: 'center',
+       color: 'red'
+    }
+ });
