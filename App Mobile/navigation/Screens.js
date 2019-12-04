@@ -127,7 +127,7 @@ const HomeStack = createStackNavigator(
     transitionConfig
   }
 );
-// divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
+
 const AppStack = createDrawerNavigator(
   {
     Onboarding: {
@@ -157,6 +157,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Actu" title="Actuality" />
+        )
+      })
+    },
+    Favoris: {
+      screen: Favoris,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Favoris" title="Favoris" />
         )
       })
     },
