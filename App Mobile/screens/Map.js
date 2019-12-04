@@ -92,7 +92,7 @@ en cours de recherche
        
       var marker=[];
        for (let index = 0; index < this.state.dataCaught.length; index++) {
-        console.log(index);
+       // console.log(index);
         var element = this.state.dataCaught[index];
   
           marker.push(
