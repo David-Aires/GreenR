@@ -80,7 +80,20 @@ CREATE TABLE `AIR_BOX` (
   PRIMARY KEY (`SERIAL_NUM`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `CLIENT`
+--
+
+CREATE TABLE `db_GreenR`.`CLIENT` (
+  `ID_CLIENT` INT NOT NULL AUTO_INCREMENT,
+  `NOM` VARCHAR(15) NOT NULL,
+  `PRENOM` VARCHAR(15) NOT NULL,
+  `ADRESSE` VARCHAR(45) NULL,
+  `MAIL` VARCHAR(25) NULL,
+  `NUMERO_TEL` VARCHAR(15) NULL,
+  PRIMARY KEY (`ID_CLIENT`));
 
 -- --------------------------------------------------------
 
@@ -99,7 +112,16 @@ ALTER TABLE `CROSS_CENTER`
 --
 -- Contraintes pour les tables déchargées
 --
-
+ALTER TABLE `db_GreenR`.`AIR_BOX` 
+ADD COLUMN `ID_CLIENT` INT NULL AFTER `DATE_ACTIVE`,
+ADD INDEX `ID_CLIENT_idx` (`ID_CLIENT` ASC);
+;
+ALTER TABLE `db_GreenR`.`AIR_BOX` 
+ADD CONSTRAINT `ID_CLIENT`
+  FOREIGN KEY (`ID_CLIENT`)
+  REFERENCES `db_GreenR`.`CLIENT` (`ID_CLIENT`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
 --
 -- Contraintes pour la table `CROSS_CENTER`
 --
