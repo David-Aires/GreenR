@@ -5,6 +5,11 @@ Pour cela nous avons mis au point un boîtier contenant un capteur de CO2, un de
 Une API en libre service sur notre [site](https://green-r.be/index.php) permet de récupérer les données librement.
 Nous l'utilisons pour afficher la position des capteurs sur notre site et sur notre application mobile.
 
+
+## Rôles dans le groupe
+* **Scrum master :** Tongres Cyril (change à chaque sprint)
+* **Product owner :** David Aires
+
 ## Test de l'application  
 
 Pour l'instant, il est possible de tester l'application en passant par EXPO (phase de développement oblige).    
@@ -47,9 +52,28 @@ Après de nombreuses tentatives, le boitier ressemble à celui-ci (voir photo ci
  
 *Il se pourrait que le boitier évolue grâce aux améliorations qu'on risquerait d'apporter*
 ## Contributeurs  
-Aires David, Allard Renaud, Azzouz Souhaib, Lebrun Quentin, Tongres Cyril, Vanden Herrewegen Guillaume.  
+* Aires David
+* Allard Renaud
+* Azzouz Souhaib
+* Lebrun Quentin
+* Tongres Cyril
+* Vanden Herrewegen Guillaume.  
   
-  
+
+### Liens Utiles au Projet
+
+* [Site Web](https://green-r.be/)
+* [GitHub](https://github.com/David-Aires/GreenR)
+* [Moodle](https://moodle.ephec.be/mod/wiki/view.php?pageid=55)
+* [Rapport](https://github.com/David-Aires/GreenR/wiki/Rapport)
+* [Timesheet](https://clockify.me/timesheet)
+* [Trello Users Stories](https://trello.com/b/xrhGKjh3/general-users-stories)
+* [Trello Sprint 1](https://trello.com/b/E09Ck4QA/users-stories-sprint-1)
+* [Trello Sprint 2](https://trello.com/b/QS7FNlb7/users-stories-sprint-2-%F0%9F%94%A5-03-10-19-17-10-19)
+* [Trello sprint 3](https://trello.com/b/TvGCWNP1/users-stories-sprint-3-%F0%9F%94%A5-17-10-19-07-11-19)
+* [Trello sprint 4](https://trello.com/b/yyREMzHD/users-stories-sprint-4-%F0%9F%94%A5-07-11-19-21-11-19)
+* [Trello sprint 5](https://trello.com/b/Jis7h31Y/users-stories-sprint-5-%F0%9F%94%A5-21-11-19-05-12-19)
+* [WIKI](https://github.com/David-Aires/GreenR/wiki)
   
 ---------------------------------
 *Ce projet a été réalisé dans le cadre du Projet d'Intégration en 3éme BAC à [l'Ephec](https://www.ephec.be/),*
