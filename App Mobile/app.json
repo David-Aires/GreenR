@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Argon FREE React Native",
-    "slug": "argon-free-react-native",
+    "name": "GreenR",
+    "slug": "GreenR",
     "privacy": "public",
     "sdkVersion": "34.0.0",
     "platforms": [
@@ -24,6 +24,14 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.GreenR.GreenR",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCIHfxIiCcO-bNjcMLL25Ivh8qyEgCDrbc"
+        }
+      }
     }
   }
 }
