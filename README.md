@@ -12,7 +12,7 @@ Nous l'utilisons pour afficher la position des capteurs sur notre site et sur no
 
 ## Test de l'application  
 
-Pour l'instant, il est possible de tester l'application en passant par EXPO (phase de développement oblige).    
+Pour l'instant, il est possible de tester l'application en passant par EXPO (phase de développement oblige) ou par un APK pour android.    
 1.télécharger node js sur votre PC et récupérer le dossier app mobile sur le github.   
 2.créer un projet react native (soit dans un IDE qui le permet soit en utilisant expo en ligne de commande).  
 3.copier le contenu de app mobile dans votre projet react native.  
@@ -20,6 +20,15 @@ Pour l'instant, il est possible de tester l'application en passant par EXPO (pha
 5.créer un compte sur https://expo.io/ et télécharger l'application sur votre smartphone.  
 6.en ligne de commande allez dans le dossier de votre projet et faites la commande *expo start* le projet va s'initialiser et un code QR va être créé.  
 7.Scanner le code QR avec l'application expo sur votre smartphone pour la lancer.  
+
+APK :
+
+1.télécharger l'APK [ici](https://expo.io/artifacts/d7a2f4b5-9a75-4cb3-a482-9ec789c0b784).
+2.passer votre smartphone android en mode développeur et activer le debugging USB.
+3.brancher votre smartphone a votre ordinateur et transférer le fichier .APK télécharger en étape1.
+4.Dans votre smartphone soit lancer le fichier APK.
+5.Celui-ci va s'installer et va vous mettre des warnings car vous installer un apk qui ne se trouve pas sur le google store, vous pouvez les passer.
+6.Lancer l'application.
 
 ### Bug  
 
