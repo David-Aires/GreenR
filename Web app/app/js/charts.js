@@ -190,7 +190,7 @@ function load_value(box,mesure,from,to){
                                 },
                                 ticks: {
                                     suggestedMin: 0,
-                                    suggestedMax: (parseInt(data_moy) + 5),
+                                    suggestedMax: (data_moy? (parseInt(data_moy) + 5) : 30 ),
                                 }
                             },
                             title: {
@@ -289,7 +289,7 @@ function load_value(box,mesure,from,to){
 initBox();
 switch (nom) {
     case 'dashboard':
-        ajaxGet("https://green-r.be/api/stats.php?box="+box+"&table=AIR_STAT&from="+date+"&to="+date_plus, function (reponse) {
+        ajaxGet("https://green-r.be/api/stats.php?box="+box+"&table=AIR_STAT&from="+date+"&to="+date_plus,function (reponse) {
             var req = JSON.parse(reponse);
             for(let pas=0;pas<req.length;pas++) {
                 data_time.push((req[pas].DATE).slice(11));
@@ -312,10 +312,20 @@ switch (nom) {
                     responsive: true,
                     scales: {
                         yAxes: [{
+                            type: 'linear',
                             display: true,
-                            ticks: {
-                                min:0
-                            }
+                            position: 'left',
+                            id: 'y-axis-1',
+                        }, {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            id: 'y-axis-2',
+
+                            // grid line settings
+                            gridLines: {
+                                drawOnChartArea: false, // only want the grid lines for one axis to show up
+                            },
                         }]
                     },
                     title: {
@@ -343,18 +353,21 @@ switch (nom) {
                     datasets: [{
                         label: 'Température',
                         data: data_temp,
+                        yAxisID: 'y-axis-2',
                         backgroundColor: "#28a745",
                         borderColor: "#28a745",
                         fill: false
                     }, {
                         label: 'Taux CO2',
                         data: data_CO2,
+                        yAxisID: 'y-axis-1',
                         backgroundColor: window.chartColors.danger,
                         borderColor: window.chartColors.danger,
                         fill: false
                     }, {
                         label: 'Humidité',
                         data: data_hum,
+                        yAxisID: 'y-axis-2',
                         backgroundColor: window.chartColors.primary,
                         borderColor: window.chartColors.primary,
                         fill: false

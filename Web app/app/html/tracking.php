@@ -55,10 +55,6 @@ if($_GET['error']=="true")
                 <a href="../../api/stats.php" class="dash-nav-item">
                     <i class="fas fa-broadcast-tower"></i> API </a>
             </div>
-            <div class="dash-nav-dropdown">
-                <a href="about.php" class="dash-nav-item">
-                    <i class="fas fa-info"></i> A propos </a>
-            </div>
         </nav>
     </div>
     <div class="dash-app">
@@ -74,14 +70,6 @@ if($_GET['error']=="true")
                     <i class="fas fa-cart-arrow-down"></i>
 
                 </a>
-                <div class="dropdown tools-item">
-                    <a href="#" class="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                        <p class="dropdown-item">AirBox n°1244986<br>Status: Active<br>Date:13/10/2019</p>
-                    </div>
-                </div>
             </div>
 
         </header>

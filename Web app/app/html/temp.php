@@ -70,10 +70,6 @@ else
                 <a href="../../api/stats.php" class="dash-nav-item">
                     <i class="fas fa-broadcast-tower"></i> API </a>
             </div>
-            <div class="dash-nav-dropdown">
-                <a href="about.html" class="dash-nav-item">
-                    <i class="fas fa-info"></i> A propos </a>
-            </div>
         </nav>
     </div>
     <div class="dash-app">

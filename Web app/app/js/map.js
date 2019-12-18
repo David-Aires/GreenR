@@ -38,7 +38,7 @@ map.on('load', function () {
             var el = document.createElement('div');
             el.className = 'marker';
             new mapboxgl.Marker(el).setLngLat([articles[pas].longitude,articles[pas].latitude]).setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                .setHTML("<strong>AirBox</strong><p><a href='dashboard.php?box="+articles[pas].box +"'"+"title=\"Click to see data\">AirBox n° "+ articles[pas].box +"</a><br>Status: Active</p>")).addTo(map);
+                .setHTML("<strong>AirBox</strong><p><a href='dashboard.php?box="+articles[pas].box +"'"+"title=\"Click to see data\">AirBox n° "+ articles[pas].box)).addTo(map);
         }
     });
 });

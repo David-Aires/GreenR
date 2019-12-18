@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -55,10 +55,6 @@ else
                 <div class="dash-nav-dropdown">
                     <a href="../../api/stats.php" class="dash-nav-item">
                         <i class="fas fa-broadcast-tower"></i> API </a>
-                </div>
-                <div class="dash-nav-dropdown">
-                    <a href="about.php" class="dash-nav-item">
-                        <i class="fas fa-info"></i> A propos </a>
                 </div>
             </nav>
         </div>
@@ -147,17 +143,6 @@ else
                                     </div>
                                     <div class="spur-card-title"> Graphique General </div>
                                     <div class="spur-card-menu">
-                                        <div class="dropdown show">
-                                            <a  class="fas fa-clock card_menu_button"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown">
-                                                <a class="dropdown-item">Aujourdhui</a>
-                                                <a class="dropdown-item">ce mois-ci</a>
-                                                <a class="dropdown-item">cette année</a>
-                                            </div>
-                                        </div>
-                                        &nbsp;
-                                        &nbsp;
                                         <div class="dropdown show">
                                             <a class="fas fa-file-export card_menu_button"  id="dropdown_export" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             </a>
