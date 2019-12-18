@@ -29,6 +29,7 @@ APK :
 4.Dans votre smartphone soit lancer le fichier APK.  
 5.Celui-ci va s'installer et va vous mettre des warnings car vous installer un apk qui ne se trouve pas sur le google store, vous pouvez les passer.  
 6.Lancer l'application.  
+Attention qu'il y encore des bugs dans l'application.  
 
 ### Bug  
 
