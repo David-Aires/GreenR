@@ -23,12 +23,12 @@ Pour l'instant, il est possible de tester l'application en passant par EXPO (pha
 
 APK :
 
-1.télécharger l'APK [ici](https://expo.io/artifacts/d7a2f4b5-9a75-4cb3-a482-9ec789c0b784). 
-2.passer votre smartphone android en mode développeur et activer le debugging USB. 
-3.brancher votre smartphone a votre ordinateur et transférer le fichier .APK télécharger en étape1. 
-4.Dans votre smartphone soit lancer le fichier APK. 
-5.Celui-ci va s'installer et va vous mettre des warnings car vous installer un apk qui ne se trouve pas sur le google store, vous pouvez les passer. 
-6.Lancer l'application. 
+1.télécharger l'APK [ici](https://expo.io/artifacts/d7a2f4b5-9a75-4cb3-a482-9ec789c0b784).  
+2.passer votre smartphone android en mode développeur et activer le debugging USB.  
+3.brancher votre smartphone a votre ordinateur et transférer le fichier .APK télécharger en étape1.  
+4.Dans votre smartphone soit lancer le fichier APK.  
+5.Celui-ci va s'installer et va vous mettre des warnings car vous installer un apk qui ne se trouve pas sur le google store, vous pouvez les passer.  
+6.Lancer l'application.  
 
 ### Bug  
 
