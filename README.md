@@ -23,7 +23,7 @@ Pour l'instant, il est possible de tester l'application en passant par EXPO (pha
 
 APK :
 
-1.télécharger l'APK [ici](https://expo.io/artifacts/d7a2f4b5-9a75-4cb3-a482-9ec789c0b784).  
+1.télécharger l'APK [ici](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40rebestre97/GreenR-33401f8cae5447dc9828edfaa5faba31-signed.apk).  
 2.passer votre smartphone android en mode développeur et activer le debugging USB.  
 3.brancher votre smartphone a votre ordinateur et transférer le fichier .APK télécharger en étape1.  
 4.Dans votre smartphone soit lancer le fichier APK.  
